@@ -10,7 +10,7 @@ require.config({
   }
 });
  
-require(['app'], function(app) {
+require(['mysherpa'], function(app) {
   // use app here
   console.log(app);
 });

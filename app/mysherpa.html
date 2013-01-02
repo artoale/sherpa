@@ -34,34 +34,16 @@
         </div>
     </nav>
 
-<section class="container">
-    <section class="row">
-        
-        <div class="span6">
-            <h1>Pick a destination</h1>
-            <input name="destination" class="span6"  data-provide="typeahead" data-items="5" data-source="[&quot;Alabama&quot;,&quot;Alaska&quot;,&quot;Arizona&quot;,&quot;Arkansas&quot;,&quot;California&quot;,&quot;Colorado&quot;,&quot;Connecticut&quot;,&quot;Delaware&quot;,&quot;Florida&quot;,&quot;Georgia&quot;,&quot;Hawaii&quot;,&quot;Idaho&quot;,&quot;Illinois&quot;,&quot;Indiana&quot;,&quot;Iowa&quot;,&quot;Kansas&quot;,&quot;Kentucky&quot;,&quot;Louisiana&quot;,&quot;Maine&quot;,&quot;Maryland&quot;,&quot;Massachusetts&quot;,&quot;Michigan&quot;,&quot;Minnesota&quot;,&quot;Mississippi&quot;,&quot;Missouri&quot;,&quot;Montana&quot;,&quot;Nebraska&quot;,&quot;Nevada&quot;,&quot;New Hampshire&quot;,&quot;New Jersey&quot;,&quot;New Mexico&quot;,&quot;New York&quot;,&quot;North Dakota&quot;,&quot;North Carolina&quot;,&quot;Ohio&quot;,&quot;Oklahoma&quot;,&quot;Oregon&quot;,&quot;Pennsylvania&quot;,&quot;Rhode Island&quot;,&quot;South Carolina&quot;,&quot;South Dakota&quot;,&quot;Tennessee&quot;,&quot;Texas&quot;,&quot;Utah&quot;,&quot;Vermont&quot;,&quot;Virginia&quot;,&quot;Washington&quot;,&quot;West Virginia&quot;,&quot;Wisconsin&quot;,&quot;Wyoming&quot;]" type="text">     
-            <div class="row">   
-                <div class="span3">
-                    <h3>Take off on </h3>
-                    <input type="text" id="start" class="datepicker">
-                </div>   
-                <div class="span3 ">
-                    <h3>back on</h3>
-                    <input type="text" id="end" class="datepicker">
-                </div>  
-            </div>
-            <div id="startPlanning" class="row">
-                <button class="btn btn-large btn-primary span6" type="button">Start Planning</button>
-            </div> 
-            
-        </div>
-        
-        <div class="span5 offset1">
-            <h1>let your</h1>
-            <div id="sherpa">Sherpa</div>
-            <button class="btn btn-large btn-primary span5" type="button">guide you!</button>
-        </div>
-    </section>
+<section class="mysherpa container">
+    <div class="row">
+        <section class="span6">
+            <ul class="unstyled">
+                <li>Location: <span id="destination"></span></li>
+                <li>Time Extimated: <span id="length"></span></li>
+            </ul>
+
+        </section>
+    </div>
 </section>
 
 
@@ -102,7 +84,7 @@
             <!-- endbuild -->
 
             <!-- build:js scripts/amd-app.js -->
-            <script data-main="scripts/main" src="scripts/vendor/require.js"></script>
+            <script data-main="scripts/mysherpa.js" src="scripts/vendor/require.js"></script>
             <!-- endbuild -->
         </body>
         </html>
