@@ -52,7 +52,7 @@ define([], function () {
                 if (!startDate || !endDate) {
                     return 0;
                 }
-                return (Math.ceil( (endDate.getTime() - startDate.getTime()) / dayMillis));
+                return (Math.ceil((endDate.getTime() - startDate.getTime()) / dayMillis));
 
             }
         }

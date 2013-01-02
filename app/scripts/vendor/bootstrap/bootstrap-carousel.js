@@ -22,7 +22,6 @@
 function($) {
 
   "use strict"; // jshint ;_;
-
   /* CAROUSEL CLASS DEFINITION
    * ========================= */
 
@@ -90,10 +89,6 @@ function($) {
     ,
     slide: function(type, next) {
       var $active = this.$element.find('.item.active'),
-        if ($active.is("#suggestion")) {
-          $("left carousel-control").addClass("hide");
-        }
-        
         $next = next || $active[type](),
         isCycling = this.interval,
         direction = type == 'next' ? 'left' : 'right',
@@ -102,38 +97,46 @@ function($) {
         e = $.Event('slide', {
           relatedTarget: $next[0]
         })
-
-        this.sliding = true
-
-        isCycling && this.pause()
-
-        $next = $next.length ? $next : this.$element.find('.item')[fallback]()
-
-        if($next.hasClass('active')) return
-
-        if($.support.transition && this.$element.hasClass('slide')) {
-          this.$element.trigger(e)
-          if(e.isDefaultPrevented()) return
-          $next.addClass(type)
-          $next[0].offsetWidth // force reflow
-          $active.addClass(direction)
-          $next.addClass(direction)
-          this.$element.one($.support.transition.end, function() {
-            $next.removeClass([type, direction].join(' ')).addClass('active')
-            $active.removeClass(['active', direction].join(' '))
-            that.sliding = false
-            setTimeout(function() {
-              that.$element.trigger('slid')
-            }, 0)
-          })
-        } else {
-          this.$element.trigger(e)
-          if(e.isDefaultPrevented()) return
-          $active.removeClass('active')
-          $next.addClass('active')
-          this.sliding = false
-          this.$element.trigger('slid')
+        if($active.is("#calendar")) {
+          var $leftarrow = $(".left.carousel-control");
+          $leftarrow.addClass("hide");
+        } else if($active.is("#suggestion")) {
+          var $leftarrow = $(".left.carousel-control");
+          $leftarrow.removeClass("hide");
         }
+
+
+      this.sliding = true
+
+      isCycling && this.pause()
+
+      $next = $next.length ? $next : this.$element.find('.item')[fallback]()
+
+      if($next.hasClass('active')) return
+
+      if($.support.transition && this.$element.hasClass('slide')) {
+        this.$element.trigger(e)
+        if(e.isDefaultPrevented()) return
+        $next.addClass(type)
+        $next[0].offsetWidth // force reflow
+        $active.addClass(direction)
+        $next.addClass(direction)
+        this.$element.one($.support.transition.end, function() {
+          $next.removeClass([type, direction].join(' ')).addClass('active')
+          $active.removeClass(['active', direction].join(' '))
+          that.sliding = false
+          setTimeout(function() {
+            that.$element.trigger('slid')
+          }, 0)
+        })
+      } else {
+        this.$element.trigger(e)
+        if(e.isDefaultPrevented()) return
+        $active.removeClass('active')
+        $next.addClass('active')
+        this.sliding = false
+        this.$element.trigger('slid')
+      }
 
       isCycling && this.cycle()
 
@@ -171,6 +174,12 @@ function($) {
    * ================= */
 
   $(function() {
+    var $active = $('.item.active');
+
+    if($active.is("#suggestion")) {
+      var $leftarrow = $(".left.carousel-control");
+      $leftarrow.addClass("hide");
+    }
     $('body').on('click.carousel.data-api', '[data-slide]', function(e) {
       var $this = $(this),
         href, $target = $($this.attr('data-target') || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) //strip for ie7
