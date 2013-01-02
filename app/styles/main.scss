@@ -1,4 +1,5 @@
 @import "fullcalendar";
+@import "jqueryui";
 @import "compass_twitter_bootstrap";
 
 .travelSpec {
@@ -34,7 +35,7 @@ section.container {
 }
 
 section.container.mysherpa {
-    margin-top: 100px;
+    margin-top: 30px;
     text-align: left;
 }
 
@@ -42,11 +43,18 @@ section.container.mysherpa {
     margin-left: 0;
     margin-top: 30px;
 }
-
-.thumbnails li{
+ul.thumbnails > li {
+    margin-left: 0;
+}
+ul.thumbnails li{
     text-align: center;
     z-index: 100;
     // background-color: $white;
+}
+img.popoverimg{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
 }
 #sherpa {
     

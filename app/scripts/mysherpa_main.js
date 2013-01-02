@@ -5,6 +5,12 @@ require.config({
         },
         fullcalendar: {
             deps: [ 'jquery-ui']
+        },
+        popover: {
+            deps: ['jquery','tooltip']
+        },
+        tooltip: {
+            deps: ['jquery']
         }
     },
 
@@ -12,7 +18,9 @@ require.config({
         hm: 'vendor/hm',
         esprima: 'vendor/esprima',
         jquery: 'vendor/jquery/jquery.min',
-        fullcalendar: 'vendor/fullcalendar/fullcalendar'
+        fullcalendar: 'vendor/fullcalendar/fullcalendar',
+        popover: 'vendor/bootstrap/bootstrap-popover',
+        tooltip: 'vendor/bootstrap/bootstrap-tooltip'
     }
 });
 
