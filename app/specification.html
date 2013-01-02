@@ -1,0 +1,402 @@
+<html>
+<head>
+  <title>Plan your calendar</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+  <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+
+  <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      padding-bottom: 40px;
+      color: #5a5a5a;
+    }
+
+
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+    }
+
+    .carousel .item {
+      height: 700px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 700px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 1000px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #000;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+    .carousel-caption p {
+    color: black;
+}
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+
+      .carousel .item {
+        height: auto;
+      }
+      .carousel img {
+        width: auto;
+        height: auto;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 700px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+
+</head>
+<body>
+
+  <div id="content">
+    <div id="contentScroller">
+
+      <div id="home" class="page"></div>
+    </div>
+  </div>
+
+  <!-- Carousel
+    ================================================== -->
+  <div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="item active">
+        <div class="container">
+
+          <div class="container-fluid">
+            <div class="row-fluid">
+
+              <div id="suggestion" class="span9">
+                <article class="hero-unit travelSpec">
+                  <h3 class="titlemysherpa location">Location: France</h3>
+                  <h3 class ="titlemysherpa timeduration">Time ext: 15 days</h3>
+                  <h4>Your Sherpa suggest: </h4>
+                </article>
+                <div class="row-fluid">
+                  <div class="span4">
+                    <h2>Heading</h2>
+                    <p>
+                      Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                    </p>
+                    <p>
+                      <a class="btn btn-large btn-primary" href="#">View details &raquo;</a>
+                    </p>
+                  </div>
+                  <!--/span-->
+                  <div class="span4">
+                    <h2>Heading</h2>
+                    <p>
+                      Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                    </p>
+                    <p>
+                      <a class="btn btn-large btn-primary" href="#">View details &raquo;</a>
+                    </p>
+                  </div>
+                  <!--/span-->
+                  <div class="span4">
+                    <h2>Heading</h2>
+                    <p>
+                      Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                    </p>
+                    <p>
+                      <a class="btn btn-large btn-primary" href="#">View details &raquo;</a>
+                    </p>
+                  </div>
+                  <!--/span--> </div>
+                <!--/row-->
+                <div class="row-fluid">
+                  <div class="span4">
+                    <h2>Heading</h2>
+                    <p>
+                      Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                    </p>
+                    <p>
+                      <a class="btn btn-large btn-primary" href="#">View details &raquo;</a>
+                    </p>
+                  </div>
+                  <!--/span-->
+                  <div class="span4">
+                    <h2>Heading</h2>
+                    <p>
+                      Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                    </p>
+                    <p>
+                      <a class="btn btn-large btn-primary" href="#">View details &raquo;</a>
+                    </p>
+                  </div>
+                  <!--/span-->
+                  <div class="span4">
+                    <h2>Heading</h2>
+                    <p>
+                      Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                    </p>
+                    <p>
+                      <a class="btn btn-large btn-primary" href="#">View details &raquo;</a>
+                    </p>
+                  </div>
+                  <!--/span--> </div>
+                <!--/row--> </div>
+              <!--/span--> </div>
+            <!--/row-->
+
+            <hr>
+
+            <footer>
+              <p>&copy; Company 2012</p>
+            </footer>
+
+          </div>
+
+        </div>
+        <div class="carousel-control-description"> Prepare your <br> Schedule</div>
+      </div>
+
+      <div id="calendar" class="item">
+        
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Another example headline.</h1>
+            <p class="lead">
+              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+            </p>
+            <a class="btn btn-large btn-primary" href="#">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+  </div>
+  <!-- /.carousel -->
+
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">Project name</a>
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+            Logged in as
+            <a href="#" class="navbar-link">Username</a>
+          </p>
+          <ul class="nav">
+            <li class="active">
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <!--/.nav-collapse --> </div>
+    </div>
+  </div>
+
+  <!--/.fluid-container-->
+
+  <!--[if lt IE 7]>
+  <p class="chromeframe">
+    You are using an outdated browser.
+    <a href="http://browsehappy.com/">Upgrade your browser today</a>
+    or
+    <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>
+    to better experience this site.
+  </p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+
+<!-- build:js scripts/plugins.js -->
+<script src="scripts/vendor/bootstrap/bootstrap-affix.js"></script>
+<script src="scripts/vendor/bootstrap/bootstrap-alert.js"></script>
+<script src="scripts/vendor/bootstrap/bootstrap-dropdown.js"></script>
+<script src="scripts/vendor/bootstrap/bootstrap-tooltip.js"></script>
+<script src="scripts/vendor/bootstrap/bootstrap-modal.js"></script>
+<script src="scripts/vendor/bootstrap/bootstrap-transition.js"></script>
+<script src="scripts/vendor/bootstrap/bootstrap-button.js"></script>
+<script src="scripts/vendor/bootstrap/bootstrap-popover.js"></script>
+<script src="scripts/vendor/bootstrap/bootstrap-typeahead.js"></script>
+<script src="scripts/vendor/bootstrap/bootstrap-carousel.js"></script>
+<script src="scripts/vendor/bootstrap/bootstrap-scrollspy.js"></script>
+<script src="scripts/vendor/bootstrap/bootstrap-collapse.js"></script>
+<script src="scripts/vendor/bootstrap/bootstrap-tab.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/amd-app.js -->
+<script data-main="scripts/main" src="scripts/vendor/require.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>
