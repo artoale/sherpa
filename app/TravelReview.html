@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='UTF-8'>
+	<style type="text/css">
+    #rateMe{float:left; clear:both; width:100%; height:auto; padding:0px; margin:0px; }
+    #rateMe .on{background:url('images/star_on.gif'); background-repeat: no-repeat; background-size: 100% 100%; }
+    #rateMe a{float:left; background:url('images/star_off.gif'); background-repeat: no-repeat; background-size: 100% 100%; width:24px; height:24px; }
+    .saved{color:red; }
+	</style>
+	<style type="text/css">
+	#profile_photo_big{width: 50px; height: 50px; }
+	</style>	
+	<script type="text/javascript" src="scripts/eventManager.js"></script>
+	<script type="text/javascript" src="scripts/ratingsys.js"></script>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
+	<script type="text/javascript" src="scripts/mapTest.js"></script>
+
+</head>
+<body onload='setDynamicMap(2); setRatingSystem();'>
+<aside>
+	Here there should be a list of similar related trips/place
+</aside>
+<article id='trip_infos'>
+	<header>
+		Alex
+		<img id='profile_photo_big' src='images/AlexPhoto.jpg' alt='Photo'>
+	</header>
+	<section id='trip_info_destination'>
+		France
+	</section>
+	<section id='trip_info_dates'>
+		from 10/11 to 20/11
+	</section>
+	<section id='trip_info_rate_cell'>
+		Rate this Trip:
+		<div id="rateMe">
+			<a id="el_1"></a>
+			<a id="el_2"></a>
+			<a id="el_3"></a>
+			<a id="el_4"></a>
+			<span id='rating_saved' style='visibility: hidden;'>Thanks For Rating!</span>
+		</div>
+	</section>
+	<aside id='dynamic_map_container'>
+		<div id='mapcanvas'>
+		</div>
+	</aside>
+</article>
+<article id='trip_info_places'>
+	
+</article>
+</body>
+</html>
