@@ -1,3 +1,4 @@
 temp
 dist
 .saas-cache
+.DS_Store

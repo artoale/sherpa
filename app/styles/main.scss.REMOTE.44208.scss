@@ -1,0 +1,31 @@
+@import "fullcalendar";
+@import "compass_twitter_bootstrap";
+@import "compass_twitter_bootstrap_responsive";
+
+
+section.container {
+    margin-top: 150px;
+    text-align: center;
+}
+
+section.container.mysherpa {
+    margin-top: 100px;
+    text-align: left;
+}
+
+#startPlanning {
+    margin-left: 0;
+    margin-top: 30px;
+}
+
+.thumbnails li{
+    text-align: center;
+    z-index: 100;
+    // background-color: $white;
+}
+#sherpa {
+    
+    font-size: 5em;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}

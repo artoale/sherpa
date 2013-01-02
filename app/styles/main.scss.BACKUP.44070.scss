@@ -1,0 +1,63 @@
+<<<<<<< HEAD
+
+@import "compass_twitter_bootstrap";
+
+.travelSpec {
+	background-color: white;
+	padding: 10px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+
+.carousel-control-description{
+	position: absolute;
+	left: auto;
+	right: 70px;
+	top: 37%;
+	line-height: 30px;
+	text-align: center;
+	width: 100px;
+	margin-top: 0;
+	font-size: 20px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
+	background-color: transparent;
+	border: 0;
+
+}
+.hide{
+	display: none;
+}
+=======
+@import "fullcalendar";
+@import "compass_twitter_bootstrap";
+@import "compass_twitter_bootstrap_responsive";
+
+
+section.container {
+    margin-top: 150px;
+    text-align: center;
+}
+
+section.container.mysherpa {
+    margin-top: 100px;
+    text-align: left;
+}
+
+#startPlanning {
+    margin-left: 0;
+    margin-top: 30px;
+}
+
+.thumbnails li{
+    text-align: center;
+    z-index: 100;
+    // background-color: $white;
+}
+#sherpa {
+    
+    font-size: 5em;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+>>>>>>> d990659b0d757e177b6b76ee0e8f6bbf3497474f
