@@ -96,24 +96,32 @@ define(['jquery'], function($) {
 
             header.addEventListener('click', function(event) {
                 if(visible) {
-                    $(content).empty();
-                    if($(event.target).is("#closebar")) {
-                        doHide();
-                        $('#closebar').hide();
-                    } else if($(event.target).hasClass("tooglable")) {
 
-                        $(content).append(opt.content[event.target.innerHTML]);
-                        $(slider).append($(content));
-                        opt.content[event.target.innerHTML].show();
-                        $('#closebar').show();
-                        
-                    }
+                    $(content).fadeOut('fast', function() {
+                        $(content).empty();
+
+
+                        if($(event.target).is("#closebar")) {
+                            doHide();
+                            $('#closebar').hide();
+                        } else if($(event.target).hasClass("tooglable")) {
+
+                            $(content).append(opt.content[event.target.innerHTML]);
+                            $(slider).append($(content));
+                            $(content).fadeIn("fast");
+                            opt.content[event.target.innerHTML].show();
+                            $('#closebar').show();
+
+                        }
+                    });
 
 
                 } else {
                     if($(event.target).hasClass("tooglable")) {
+
                         $(content).append(opt.content[event.target.innerHTML]);
                         $(slider).append($(content));
+                        $(content).show();
                         opt.content[event.target.innerHTML].show();
                         $('#closebar').show();
                         doShow();
@@ -121,6 +129,7 @@ define(['jquery'], function($) {
 
                 }
             });
+
 
             $(header).append(generateHeaderContent(opt.content), generateCloseIcon());
             $(slider).append(header);
