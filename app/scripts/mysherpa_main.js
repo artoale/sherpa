@@ -20,7 +20,8 @@ require.config({
         jquery: 'vendor/jquery/jquery.min',
         fullcalendar: 'vendor/fullcalendar/fullcalendar',
         popover: 'vendor/bootstrap/bootstrap-popover',
-        tooltip: 'vendor/bootstrap/bootstrap-tooltip'
+        tooltip: 'vendor/bootstrap/bootstrap-tooltip',
+        addRemovePoi: "addRemovePoi"
     }
 });
 

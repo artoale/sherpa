@@ -1,5 +1,5 @@
 /*global define*/
-define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider', 'fullcalendar', 'popover'], function(trip, $, thumbGenerator, contentGenerator, slider) {
+define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider', 'fullcalendar', 'popover','addRemovePoi'], function(trip, $, thumbGenerator, contentGenerator, slider, addRemove) {
     'use strict';
     var thumbs = [{
         capt: 'Paris',
@@ -46,6 +46,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
             speed: 'fast'
         };
         slider(slideroptions);
+        addRemove();
         var triplen, length = '',
             counter = 0,
             options = {
