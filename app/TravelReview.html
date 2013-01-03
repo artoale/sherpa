@@ -1,26 +1,35 @@
 <!DOCTYPE html>
-
-<html lang='en'>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+
+    <link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" type="text/css" href="styles/highslide.css" />
-    <script src="scripts/vendor/modernizr.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles/travelReview.css" />
+	
+	<script src="scripts/vendor/modernizr.min.js"></script>
+
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
+	<!--
 	<script type="text/javascript" src="scripts/eventManager.js"></script>
 	<script type="text/javascript" src="scripts/ratingsys.js"></script>
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
 	<script type="text/javascript" src="scripts/mapTest.js"></script>
-	<script type="text/javascript" src="scripts/highslide.js"></script>
+	<script type="text/javascript" src="scripts/vendor/highslide.js"></script>
 	<script type="text/javascript" src="scripts/places_images_generator.js"></script>
 	<script type="text/javascript" src="scripts/infoTravel.js"></script>
-	<script type="text/javascript" src="scripts/travelReview_main.js"></script>
+	<script type="text/javascript" src="scripts/travelReview_main.js"></script> -->
 </head>
-<body onload='generateContent();'>
+<body>
 	    <nav class="navbar navbar-static-top">
         <div class="navbar-inner ">
             <a href="" class="brand">mySherpa</a>
@@ -46,11 +55,11 @@
 			<header id='header_traveller'>
 			</header>
 			<section id='trip_details'>
-				<section id='trip_info_destination'>
-				</section>
-				<section id='trip_info_dates'>
-				</section>
-				<section id='trip_info_rate_cell'>
+				<div id='trip_info_destination'>
+				</div>
+				<div id='trip_info_dates'>
+				</div>
+				<div id='trip_info_rate_cell'>
 					Rate this Trip:
 					<div id="rateMe">
 						<a id="el_1"></a>
@@ -59,25 +68,25 @@
 						<a id="el_4"></a>
 						<span id='rating_saved' style='visibility: hidden;'>Thanks For Rating!</span>
 					</div>
-				</section>
+				</div>
 			</section>
 		</article>
 		<aside id='dynamic_map_container'>
 			<div id='mapcanvas'></div>
 		</aside>
-	<article id='trip_info_places'>
-	</article>
+		<article id='trip_info_places'>
+		</article>
 	</section>
-	<article id='comments'>
-		<header id='comments_top'>
+	<section id='comments'>
+		<article id='comments_top'>
 			Leave a Comment!
 			<form class='comment_form'>
 				<textarea class='comment_textarea' rows='3' placeholder='Write a comment...'></textarea>
 				<br>
 				<input type='submit' value='Comment!'>
 			</form>
-		</header>
-		<section id='comment_list'>
+		</article>
+		<article id='comment_list'>
 			<section class='travel_review_comment'>
 				<aside class='comment_photo'>
 				<img class='profile_photo_small' src='images/AlicePhoto.jpg' alt=''>
@@ -87,10 +96,50 @@
 					<span class='comment_text'>Italy Is Amazing!</span>
 				</article>
 			</section>
-		</section>
-	</article>
+		</article>
+	</section>
 </article>
-<div>
-</div>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+            <![endif]-->
+
+            <!-- Add your site or application content here -->
+
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+            <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
+
+
+
+            <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+            <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                s.parentNode.insertBefore(g,s)}(document,'script'));
+            </script>
+
+            <!-- build:js scripts/plugins.js -->
+            <script src="scripts/vendor/bootstrap/bootstrap-affix.js"></script>
+            <script src="scripts/vendor/bootstrap/bootstrap-alert.js"></script>
+            <script src="scripts/vendor/bootstrap/bootstrap-dropdown.js"></script>
+            <script src="scripts/vendor/bootstrap/bootstrap-tooltip.js"></script>
+            <script src="scripts/vendor/bootstrap/bootstrap-datepicker.js"></script>
+            <script src="scripts/vendor/bootstrap/bootstrap-modal.js"></script>
+            <script src="scripts/vendor/bootstrap/bootstrap-transition.js"></script>
+            <script src="scripts/vendor/bootstrap/bootstrap-button.js"></script>
+            <script src="scripts/vendor/bootstrap/bootstrap-popover.js"></script>
+            <script src="scripts/vendor/bootstrap/bootstrap-typeahead.js"></script>
+            <script src="scripts/vendor/bootstrap/bootstrap-carousel.js"></script>
+            <script src="scripts/vendor/bootstrap/bootstrap-scrollspy.js"></script>
+            <script src="scripts/vendor/bootstrap/bootstrap-collapse.js"></script>
+            <script src="scripts/vendor/bootstrap/bootstrap-tab.js"></script>
+            <!-- endbuild -->
+
+            <!-- build:js scripts/amd-app.js -->
+            <script data-main="scripts/travelReview_main.js" src="scripts/vendor/require.js"></script>
+            <!-- endbuild -->
+        </body>
+        </html>
+
 </body>
 </html>
