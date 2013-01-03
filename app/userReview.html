@@ -14,16 +14,11 @@
 
 
     <link rel="stylesheet" href="styles/main.css">
-	<link rel="stylesheet" type="text/css" href="styles/highslide.css" />
-	<link rel="stylesheet" type="text/css" href="styles/travelReview.css" />
-	
-	<script src="scripts/vendor/modernizr.min.js"></script>
-
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
-
+        <link rel="stylesheet" type="text/css" href="styles/travelReview.css" />
+    <script src="scripts/vendor/modernizr.min.js"></script>
 </head>
 <body>
-	    <nav class="navbar navbar-static-top">
+    <nav class="navbar navbar-static-top">
         <div class="navbar-inner ">
             <a href="" class="brand">mySherpa</a>
             <ul class="nav pull-left">
@@ -39,57 +34,27 @@
             </ul>
         </div>
     </nav>
-<aside class='aside_general_bar'>
-	Here there should be a list of similar related trips/place
-</aside>
-<article class='container'>
-	<div class='row'>
-	<section id='trip_infos' class='span9 trip_infos'>
-		<article id='text_infos' class='text_infos'>
-			<header id='header_traveller'>
-			</header>
-			<section id='trip_details' class='trip_details'>
-				<div id='trip_info_destination'>
-				</div>
-				<div id='trip_info_dates'>
-				</div>
-				<div id='trip_info_rate_cell'>
-					Rate this Trip:
-					<div id="rateMe">
-						<a id="el_1"></a>
-						<a id="el_2"></a>
-						<a id="el_3"></a>
-						<a id="el_4"></a>
-						<span id='rating_saved' style='visibility: hidden;'>Thanks For Rating!</span>
-					</div>
-				</div>
-			</section>
-		</article>
-		<aside id='dynamic_map_container' class='span3'>
-			<div id='mapcanvas'></div>
-		</aside>
-		<article id='trip_info_places'>
-		</article>
-	</section>
-	<section id='comments'>
-		<article id='comments_top'>
-			Leave a Comment!
-			<form class='comment_form'>
-				<textarea rows='3' placeholder='Write a comment...'></textarea>
-				<br>
-				<button class='btn btn-primary' type='button'>Comment!</button>
-			</form>
-		</article>
-		<article id='comment_list'>
-			<section class='travel_review_comment row'>
-				<img class='comment_photo span2 profile_photo_small' src='images/AlicePhoto.jpg' alt=''>
-				<dl class='comment_element span10 dl-horizontal'>
-				<dt>Alice: </dt>
-				<dd>Italy Is Amazing!</dd>
-			</section>
-		</article>
-	</section>
-</article>
+
+    <aside class='aside_general_bar'>
+        Here there should be a list of similar related trips/place
+    </aside>
+    <article class='container'>
+        <div class='row'>
+    <section id='trip_infos' class='span9 trip_infos'>
+        <article id='text_infos' class='text_infos'>
+            <header id='header_traveller' class='header_traveller'>
+            </header>
+            <section id='user_details' class='user_details'>
+                
+            </section>
+        </article>
+        <aside id='static_map_container' class='span3'>
+            <div id='mapcanvas'></div>
+        </aside>
+        <article id='travel_list' class='span9'>
+        </article>
+    </article>
+
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
             <![endif]-->
@@ -126,8 +91,8 @@
             <script src="scripts/vendor/bootstrap/bootstrap-tab.js"></script>
             <!-- endbuild -->
 
-            <!-- build:js scripts/amd-app.js -->
-            <script data-main="scripts/travelReview_main.js" src="scripts/vendor/require.js"></script>
+            <!-- build:js scripts/amd-mysherpa_app.js -->
+            <script data-main="scripts/user_review_main.js" src="scripts/vendor/require.js"></script>
             <!-- endbuild -->
-</body>
-</html>
+        </body>
+        </html>
