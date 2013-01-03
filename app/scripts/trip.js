@@ -67,6 +67,9 @@ define([], function () {
     };
 
     trip.load = function () {
+        if( ! sessionStorage.trip ){
+            return;
+        }
         var oldTrip = JSON.parse(sessionStorage.trip);
         if (oldTrip) {
             trip.startDate = oldTrip.startDate;
