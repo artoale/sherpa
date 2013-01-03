@@ -98,3 +98,23 @@ img.popoverimg{
 #all{
 	display: none;
 }
+.uparrow{
+	-moz-transform:rotate(90deg);
+	-webkit-transform:rotate(90deg);
+	font-size: 25px;
+	display:inline-block;
+}
+
+.elBottom{
+display: inline-block;
+margin-right: 20px;
+}
+.imgPoiBar{
+		height: 100px;
+	width: 100px;
+	padding: 2px;
+
+}
+.elBottom .img {
+	display: inline;
+}

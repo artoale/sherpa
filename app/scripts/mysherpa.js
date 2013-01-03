@@ -37,11 +37,11 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         var slideroptions = {
             column: ['Hotel', 'Restaurant', 'Shopping'],
             position: 'bottom',
-            headerSize: '30px',
-            contentSize: '200px',
+            headerSize: '50px',
+            contentSize: '135px',
             content: mycontent,
             headerContent: ['restaurants', 'all', 'deleted'],
-            backgroundColor: '#bbb',
+            backgroundColor: 'trasparent',
             opacity: 0.7,
             speed: 'fast'
         };
