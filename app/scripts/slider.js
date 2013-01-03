@@ -1,29 +1,32 @@
 /*global define*/
-define(['jquery'], function ($) {
+define(['jquery'], function($) {
     'use strict';
+
+
     var defaults = {
         column: ['Hotel', 'Restaurant', 'Shopping'],
         position: 'bottom',
         headerSize: '30px',
         contentSize: '200px',
-        content: 'PincoPallo',
+        content: {},
         headerContent: ['pinco', 'pallo', 'pollo'],
-        backgroundColor: '#AAA',
+        backgroundColor: '#bbb',
         opacity: 0.7,
         speed: 'fast'
     },
 
         opt;
-    var generateHeaderContent = function (headerList) {
+    var generateHeaderContent = function(optcontent) {
             var content = document.createElement('div');
-            headerList.forEach(function (element) {
-                $(content).append($('<span class="span4">' + element + '</span>').css({
-                    margin:''
+            var array = Object.keys(optcontent) ;
+            Object.keys(optcontent).forEach(function(element) {
+                $(optcontent[element]).append($('<span class="span4">' + element + '</span>').css({
+                    margin: ''
                 }));
             });
             return content;
         };
-    var create = function (options) {
+    var create = function(options) {
             opt = $.extend(true, {}, defaults, options);
             var sliderHeight = parseInt(opt.headerSize, 10) + parseInt(opt.contentSize, 10);
             var slider = document.createElement('div');
@@ -32,13 +35,13 @@ define(['jquery'], function ($) {
             var bottomBar = document.createElement('div');
             var visible = true;
             $(header).addClass('row-fluid');
-            var doHide = function () {
+            var doHide = function() {
                     $(slider).animate({
-                        height: opt.headerSize,
+                        height: opt.headerSize
                     }, opt.speed);
                     visible = false;
                 };
-            var doShow = function () {
+            var doShow = function() {
                     $(slider).animate({
                         height: sliderHeight,
                     }, opt.speed);
@@ -71,17 +74,23 @@ define(['jquery'], function ($) {
                 opacity: 0
             });
 
-            header.addEventListener('click', function () {
-                if (visible) {
+
+
+            header.addEventListener('click', function(event) {
+                if(visible) {
                     doHide();
                 } else {
+
+                    $(slider).append(opt.content[event.target.innerHTML]);
+                    opt.content[event.target.innerHTML].show();
+
                     doShow();
                 }
             });
-            $(header).append(generateHeaderContent(opt.headerContent));
-            $(slider).append(header, content);
-            $(slider).append(opt.content);
+            $(header).append(generateHeaderContent(opt.content));
+            $(slider).append(header);
             $('body').append(slider, bottomBar);
+            doHide();
             return {
                 hide: doHide,
                 show: doShow
