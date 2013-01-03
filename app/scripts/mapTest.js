@@ -22,7 +22,7 @@ function setDynamicMap(num) {
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
 	};
 	document.getElementById('mapcanvas').style.height = '350px';
-	document.getElementById('mapcanvas').style.width = '90%';
+	document.getElementById('mapcanvas').style.width = '100%';
 	map = new google.maps.Map(document.getElementById('mapcanvas'), mapOptions);
 	directionsDisplay.setMap(map);
 	var start = startLocation;

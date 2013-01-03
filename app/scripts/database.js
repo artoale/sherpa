@@ -21,29 +21,27 @@ function getData() {
 			}, {
 				capt: 'Tour Eiffel, Paris, France',
 				uri: 'paris.jpg'
+			}],
+			hotels: [{
+				capt: 'Hilton Hotel, Paris',
+				uri: 'hilton_paris.jpg'
+			}, {
+				capt: 'Windsor Hotel, Marseille',
+				uri: 'windsor_marseille.jpg'
+			}],
+			restaurants: [{
+				capt: 'Chez Michelle, Paris',
+				uri: 'chez_michelle_paris.jpg'
+			}],
+			shopping: [{
+				capt: 'Galeries Lafayette, Paris',
+				uri: 'lafayette_paris.jpg'
 			}]
 		}]
 	}, {
 		user: 'Eve',
 		userImage: 'EvePhoto.jpg',
-		travels: [{
-			location: 'Brazil',
-			fromDate: new Date(2010, 11, 5),
-			toDate: new Date(2010, 11, 25),
-			places: ['Rio De Janeiro, Brazil'],
-			startLocation: 'Sao Paulo, Brazil',
-			endLocation: 'Salvador, Brazil',
-			pictures: [{
-				capt: 'Landscape, Sao Paulo, Brazil',
-				uri: 'sao-paolo.jpg'
-			}, {
-				capt: 'Redeemer Statue, Rio De Janeiro, Brazil',
-				uri: 'rio-de-janeiro.jpg'
-			}, {
-				capt: 'Pelourinho District, Salvador, Brazil',
-				uri: 'salvador.jpg'
-			}]
-		}]
+		travels: []
 	}, {
 		user: 'Bob',
 		userImage: 'BobPhoto.jpg',
@@ -93,6 +91,40 @@ function getData() {
 			}, {
 				capt: 'Landscape, Turin, Italy',
 				uri: 'turin.jpg'
+			}],
+			hotels: [{
+				capt: 'Hilton Hotel, Milan',
+				uri: 'hilton_milan.jpg'
+			}, {
+				capt: 'Windsor Hotel, Turin',
+				uri: 'windsor_turin.jpg'
+			}],
+			restaurants: [{
+				capt: 'Dal Giangi, Rho',
+				uri: 'dal_giangi_rho.jpg'
+			}],
+			shopping: [{
+				capt: 'Via Montenapoleone, Milan',
+				uri: 'montenapoleone_milan.jpg'
+			}]
+
+		},
+		{
+			location: 'Brazil',
+			fromDate: new Date(2010, 11, 5),
+			toDate: new Date(2010, 11, 25),
+			places: ['Rio De Janeiro, Brazil'],
+			startLocation: 'Sao Paulo, Brazil',
+			endLocation: 'Salvador, Brazil',
+			pictures: [{
+				capt: 'Landscape, Sao Paulo, Brazil',
+				uri: 'sao-paolo.jpg'
+			}, {
+				capt: 'Redeemer Statue, Rio De Janeiro, Brazil',
+				uri: 'rio-de-janeiro.jpg'
+			}, {
+				capt: 'Pelourinho District, Salvador, Brazil',
+				uri: 'salvador.jpg'
 			}]
 		}]
 	}];
@@ -107,6 +139,16 @@ function getData() {
 			trav.getPictures = function () {
 				return trav.pictures;
 			};
+			trav.getHotels = function () {
+				return trav.hotels;
+			};
+			trav.getRestaurants = function () {
+				return trav.restaurants;
+			};
+			trav.getShopping = function () {
+				return trav.shopping;
+			};
+
 			trav.getLocation = function () {
 				return trav.location;
 			};

@@ -39,46 +39,49 @@
             </ul>
         </div>
     </nav>
-<aside class='aside_general_bar'>
-	Here there should be a list of similar related trips/place
-</aside>
-<article class='container'>
+
+<article class='travelreview container'>
 	<div class='row'>
-	<section id='trip_infos' class='span9 trip_infos'>
-		<article id='text_infos' class='text_infos'>
-			<header id='header_traveller'>
-			</header>
-			<section id='trip_details' class='trip_details'>
-				<div id='trip_info_destination'>
-				</div>
-				<div id='trip_info_dates'>
-				</div>
-				<div id='trip_info_rate_cell'>
-					Rate this Trip:
-					<div id="rateMe">
-						<a id="el_1"></a>
-						<a id="el_2"></a>
-						<a id="el_3"></a>
-						<a id="el_4"></a>
-						<span id='rating_saved' style='visibility: hidden;'>Thanks For Rating!</span>
+	<section class='aside_general_bar span2'>
+	Here there should be a list of similar related trips/place
+	</section>
+	<section id='trip_infos' class='span10 trip_infos'>
+		<div class='row'>
+			<article id='text_infos' class='text_infos span5'>
+				<header id='header_traveller'>
+				</header>
+				<section id='trip_details' class='trip_details'>
+					<div id='trip_info_destination'>
 					</div>
-				</div>
-			</section>
-		</article>
-		<aside id='dynamic_map_container' class='span3'>
+					<div id='trip_info_dates'>
+					</div>
+					<div id='trip_info_rate_cell'>
+						Rate this Trip:
+						<div id="rateMe">
+							<a id="el_1"></a>
+							<a id="el_2"></a>
+							<a id="el_3"></a>
+							<a id="el_4"></a>
+							<span id='rating_saved' style='visibility: hidden;'>Thanks For Rating!</span>
+						</div>
+					</div>
+				</section>
+			</article>
+		<aside id='dynamic_map_container' class='span5'>
 			<div id='mapcanvas'></div>
 		</aside>
-		<article id='trip_info_places'>
+		</div>
+		<article id='trip_info_places' class='trip_info_places'>
 		</article>
 	</section>
-	<section id='comments'>
+	<section id='comments' class='comments'>
 		<article id='comments_top'>
 			Leave a Comment!
-			<form class='comment_form'>
-				<textarea rows='3' placeholder='Write a comment...'></textarea>
-				<br>
-				<button class='btn btn-primary' type='button'>Comment!</button>
-			</form>
+			<div class='comment_form'>
+					<textarea id='textarea_comment' rows='3' placeholder='Write a comment...'></textarea>
+					<br>
+					<button class='btn btn-primary' type='submit' onclick='writeComment()'>Comment!</button>
+			</div>
 		</article>
 		<article id='comment_list'>
 			<section class='travel_review_comment row'>
@@ -90,6 +93,9 @@
 		</article>
 	</section>
 </article>
+
+<div id='barContainer'>
+</div>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
             <![endif]-->
