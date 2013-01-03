@@ -1,7 +1,7 @@
 /*jslint browser:true */
 
 function generateContent() {
-	var num = 2;
+	var num = 3;
 	setDynamicMap(num); 
 	setRatingSystem();
 	generateImagesThumbnails(num); 

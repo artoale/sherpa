@@ -5,7 +5,7 @@ function getInformationTravel(num) {
 
 	Date.prototype.getCustomDate = function () {
 		var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-		var day = this.getDay() + 1;
+		var day = this.getDate();
 		return day + ' ' + monthNames[this.getMonth()] + ' ' + this.getFullYear();
 	};
 
@@ -14,15 +14,15 @@ function getInformationTravel(num) {
 			user: 'Alex',
 			userImage: 'AlexPhoto.jpg',
 			location: 'France',
-			fromDate: new Date(2011, 11, 10),
-			toDate: new Date(2011, 11, 22),
+			fromDate: new Date(2011, 10, 10),
+			toDate: new Date(2011, 10, 22),
 		},
 		1: {
 			user: 'Eve',
 			userImage: 'EvePhoto.jpg',
 			location: 'Brazil',
-			fromDate: new Date(2010, 12, 5),
-			toDate: new Date(2010, 12, 25),
+			fromDate: new Date(2010, 11, 5),
+			toDate: new Date(2010, 11, 25),
 		},
 		2: {
 			user: 'Bob',

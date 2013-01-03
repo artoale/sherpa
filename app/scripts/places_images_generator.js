@@ -6,26 +6,26 @@ function generateImagesThumbnails(num) {
 	var arrOfTravels = ['France_Alex', 'Brazil_Eve', 'China_Bob', 'Italy_Alice'];
 	images = {
 		0: [{
-			capt: 'Nice, France',
+			capt: 'Landscape, Nice, France',
 			uri: 'nice.jpg'
 		}, {
-			capt: 'Marseille, France',
+			capt: 'Cathedral, Marseille, France',
 			uri: 'marseille.jpg'
 		}, {
-			capt: 'Bordeaux, France',
+			capt: 'Bordeaux Center, Bordeaux, France',
 			uri: 'bordeaux.jpg'
 		}, {
-			capt: 'Paris, France',
+			capt: 'Tour Eiffel, Paris, France',
 			uri: 'paris.jpg'
 		}],
 		1: [{
-			capt: 'Sao Paulo, Brazil',
-			uri: 'saopaolo.jpg'
+			capt: 'Landscape, Sao Paulo, Brazil',
+			uri: 'sao-paolo.jpg'
 		}, {
-			capt: 'Rio De Janeiro, Brazil',
-			uri: 'rio.jpg'
+			capt: 'Redeemer Statue, Rio De Janeiro, Brazil',
+			uri: 'rio-de-janeiro.jpg'
 		}, {
-			capt: 'Salvador, Brazil',
+			capt: 'Pelourinho District, Salvador, Brazil',
 			uri: 'salvador.jpg'
 		}],
 		2: [{
@@ -45,16 +45,16 @@ function generateImagesThumbnails(num) {
 			uri: 'nanjing.jpg'
 		}],
 		3: [{
-			capt: 'Milan, Italy',
+			capt: 'Dome, Milan, Italy',
 			uri: 'milan.jpg'
 		}, {
-			capt: 'Rho, Italy',
+			capt: 'Citterio Factory, Rho, Italy',
 			uri: 'rho.jpg'
 		}, {
-			capt: 'Busto Arsizio, Italy',
-			uri: 'bustoarsizio.jpg'
+			capt: 'St. John\'s Church, Busto Arsizio, Italy',
+			uri: 'busto-arsizio.jpg'
 		}, {
-			capt: 'Turin, Italy',
+			capt: 'Landscape, Turin, Italy',
 			uri: 'turin.jpg'
 		}]
 	};
