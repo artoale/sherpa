@@ -221,9 +221,8 @@
                   <div class="span4">
                     <img class="imgPoi" src="images/sicily.jpg" height="100px" width="100px">
                     <header>
-                      <p class="poiTitle">
-                      Sicily</header>
-                      </p>
+                      <p class="poiTitle">Sicily</header>
+                    </p>
                     <p >
                       <a class="btn btn-large btn-primary" href="#">View details &raquo;</a>
                     </p>
@@ -299,17 +298,17 @@
           <br>Schedule</div>
       </div>
 
-      <div id="calendar" class="item">
+      <div id="calendarItem" class="item">
 
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p class="lead">
-              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-            </p>
-            <a class="btn btn-large btn-primary" href="#">Learn more</a>
+        <section class="mysherpa container">
+          <div class="row">
+            <section class="span2">
+              <ul class="thumbnails "></ul>
+            </section>
+            <div id="calendar" class="span10"></div>
           </div>
-        </div>
+        </section>
+
       </div>
     </div>
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
@@ -390,7 +389,7 @@
 <!-- endbuild -->
 
 <!-- build:js scripts/amd-app.js -->
-<script data-main="scripts/main" src="scripts/vendor/require.js"></script>
+<script data-main="scripts/mysherpa_main.js" src="scripts/vendor/require.js"></script>
 <!-- endbuild -->
 </body>
 </html>

@@ -97,7 +97,7 @@ function($) {
         e = $.Event('slide', {
           relatedTarget: $next[0]
         })
-        if($active.is("#calendar")) {
+        if($active.is("#calendarItem")) {
           var $leftarrow = $(".left.carousel-control");
           $leftarrow.addClass("hide");
         } else if($active.is("#suggestion")) {
