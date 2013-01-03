@@ -9,7 +9,7 @@
  */
 
 (function($) {
-
+var loading = false;
 
 	$.fn.scrollPagination = function(options) {
 
@@ -40,8 +40,10 @@
 				$(this).scrollPagination.defaults['contentPage']="democontent"+$(this).scrollPagination.defaults['demo']+".html"
 				$(this).scrollPagination.defaults['demo']++;
 			}else{
+				//demo infinite
 				//$(this).scrollPagination.defaults['demo']=0;
 				$(this).stopScrollPagination();
+
 			}
 		});
 	};
@@ -49,11 +51,12 @@
 	$.fn.scrollPagination.loadContent = function(obj, opts) {
 		var target = opts.scrollTarget;
 		var mayLoadContent = $(target).scrollTop() + opts.heightOffset >= $(document).height() - $(target).height();
-		if(mayLoadContent) {
+		if(mayLoadContent && !loading) {
 			if(opts.beforeLoad != null) {
 				opts.beforeLoad();
 			}
 			$(obj).children().attr('rel', 'loaded');
+			loading = true;
 			$.ajax({
 				type: 'POST',
 				url: opts.contentPage,
@@ -65,9 +68,15 @@
 					var objectsRendered = $(obj).children('[rel!=loaded]');
 					if(opts.afterLoad != null) {
 						opts.afterLoad(objectsRendered);
-						$(obj).demoGoToNext();
+						
 					}	
 				},
+				//for DEMO
+				//to load only after a request in ajax has finished  
+				complete: function(){
+		                $(obj).demoGoToNext();
+		                loading = false;
+		               },
 				dataType: 'html'
 			});
 		}
@@ -84,7 +93,10 @@
 				event.stopPropagation();
 			}
 		});
-
+		//for DEMO
+		//to avoid to load twice democontent0.html 
+		//why?
+		$(obj).scrollPagination.defaults['demo']=1;
 		$.fn.scrollPagination.loadContent(obj, opts);
 
 	};

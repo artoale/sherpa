@@ -19,7 +19,7 @@
 /**
  * Overwrite for having a carousel with dynamic height.
  */
-.jcarousel-skin-tango .jcarousel-container-vertical {
+ .jcarousel-skin-tango .jcarousel-container-vertical {
     height: 500px;
 }
 
@@ -47,7 +47,7 @@
         </div>
     </nav>
     <aside id='leftAside'>
-            <ul id="mycarousel" class="jcarousel jcarousel-skin-tango">
+        <ul id="mycarousel" class="jcarousel jcarousel-skin-tango">
             <li><img src="http://static.flickr.com/66/199481236_dc98b5abb3_s.jpg" width="75" height="75" alt="" /></li>
             <li><img src="http://static.flickr.com/75/199481072_b4a0d09597_s.jpg" width="75" height="75" alt="" /></li>
             <li><img src="http://static.flickr.com/57/199481087_33ae73a8de_s.jpg" width="75" height="75" alt="" /></li>
@@ -58,14 +58,22 @@
             <li><img src="http://static.flickr.com/69/199481255_fdfe885f87_s.jpg" width="75" height="75" alt="" /></li>
             <li><img src="http://static.flickr.com/60/199480111_87d4cb3e38_s.jpg" width="75" height="75" alt="" /></li>
             <li><img src="http://static.flickr.com/70/229228324_08223b70fa_s.jpg" width="75" height="75" alt="" /></li>
-          </ul>
+        </ul>
     </aside>
     <section class="mysherpa container">
         <div class="row">
-            <section class="span6">
+            <section class="span6" id='a'>
                 <div id="content" scrollpagination="enabled">
+                    <div class="post" id='p'>
+                        <h1>title</h1>
+                        <img width="90" height="55" src="images/star_on.gif" alt="" title=""/>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas veniam facilis architecto blanditiis odio ullam mollitia explicabo soluta animi ea quae adipisci consequuntur beatae maxime illo vitae optio reiciendis perferendis.
+                        </p> 
+                        <a href="#">Some link</a>
+                    </div>
+
                 </div>
-                <div class="loading" id="loading">Wait a moment... it's loading!</div>
+                <div class="loading" id="loading">Scroll down to load other posts</div>
             </section>
         </div>
     </section>
@@ -107,7 +115,7 @@
             <script src="scripts/vendor/bootstrap/bootstrap-tab.js"></script>
             <!-- endbuild -->
             
-            <!-- DANI -->
+            <!-- TODO: da implementare come altri moduli js-->
             <script type="text/javascript" src="scripts/jquery.js"></script>
             <script type="text/javascript" src="scripts/scrollpagination.js"></script>
             <script type="text/javascript" src="scripts/jquery.jcarousel.min.js"></script>
@@ -129,9 +137,8 @@
             </script>
             <script type="text/javascript">
              //init scroll
-                $(document).ready()
-                $(function(){
-                    $('#content').scrollPagination({
+             $(document).ready(function(){
+                $('#content').scrollPagination({
                         'contentPage': 'democontent0.html', // the url you are fetching the results
                         'contentData': {},
                         //'contentData': {'numElem' : $('#content').children().size()}, // these are the variables you can pass to the request, for example: children().size() to know which page you are
@@ -141,18 +148,16 @@
                             $('#loading').fadeIn(); 
                         },
                         'afterLoad': function(elementsLoaded){ // after loading content, you can use this function to animate your new elements
-                             $('#loading').fadeOut();
-                             var i = 0;
-                             $(elementsLoaded).fadeInWithDelay();
+                           $('#loading').fadeOut();
+                           var i = 0;
+                           $(elementsLoaded).fadeInWithDelay();
                              if ($('#content').children().size() > 100){ // if more than 100 results already loaded, then stop pagination (only for testing)
                                 $('#nomoreresults').fadeIn();
                                 $('#content').stopScrollPagination();
-                             }
-                             //DANI
-                             //$('#content').demoGoToNext();
+                            }
                         }
                     });
-                    
+
                     // code for fade in element by element
                     $.fn.fadeInWithDelay = function(){
                         var delay = 0;
@@ -161,11 +166,11 @@
                             delay += 100;
                         });
                     };
-                           
+
                 });
-                </script>
-            <!-- build:js scripts/amd-app.js -->
-            <!-- <script data-main="scripts/mysherpa.js" src="scripts/vendor/require.js"></script>-->
-            <!-- endbuild -->
-        </body>
-        </html>
+</script>
+<!-- build:js scripts/amd-app.js -->
+<!-- <script data-main="scripts/mysherpa.js" src="scripts/vendor/require.js"></script>-->
+<!-- endbuild -->
+</body>
+</html>
