@@ -21,8 +21,8 @@ define(['jquery'], function($) {
             var content = document.createElement('div');
             var array = Object.keys(optcontent);
             array.forEach(function(element) {
-                $(content).append($('<span class="span4"><div class="uparrow">&lsaquo;</div><div class="tooglable">' + element + '</div></span>').css({
-                    margin: ''
+            $(content).append($('<span class="span4"><div class="uparrow">&lsaquo;</div><div class="tooglable" style ="cursor:hand">' + element + '</div></span>').css({   
+                             margin: ''
                 }));
             });
 
@@ -39,7 +39,8 @@ define(['jquery'], function($) {
                 right: '25px',
                 'font-size': '40px',
                 '-moz-transform': 'rotate(270deg)',
-                '-webkit-transform': 'rotate(270deg)'
+                '-webkit-transform': 'rotate(270deg)',
+                'cursor':'hand'
             });
             return content;
 
@@ -99,26 +100,19 @@ define(['jquery'], function($) {
 
                     $(content).fadeOut('fast', function() {
                         $(content).empty();
-
-
                         if($(event.target).is("#closebar")) {
                             doHide();
                             $('#closebar').hide();
                         } else if($(event.target).hasClass("tooglable")) {
-
                             $(content).append(opt.content[event.target.innerHTML]);
                             $(slider).append($(content));
                             $(content).fadeIn("fast");
                             opt.content[event.target.innerHTML].show();
                             $('#closebar').show();
-
                         }
                     });
-
-
                 } else {
                     if($(event.target).hasClass("tooglable")) {
-
                         $(content).append(opt.content[event.target.innerHTML]);
                         $(slider).append($(content));
                         $(content).show();
@@ -126,7 +120,6 @@ define(['jquery'], function($) {
                         $('#closebar').show();
                         doShow();
                     }
-
                 }
             });
 
