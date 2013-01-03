@@ -29,7 +29,7 @@ function setDynamicMap(num) {
 			places: ['Rho, Italy', 'Busto Arsizio, Italy'],
 			startLocation: 'Milano, Italy',
 			endLocation: 'Torino, Italy'
-		} 
+		}
 	};
 
 	var places = travels[num].places;
@@ -44,9 +44,8 @@ function setDynamicMap(num) {
 		zoom: 7,
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
 	};
-	//TODO: METTERE LO STILE DELLA MAPPA NEL CSS (RICORDARSI CHE NECESSITA MINHEIGHT E MIN WIDTH)
-	document.getElementById('mapcanvas').style.height = '200px';
-	document.getElementById('mapcanvas').style.width = '200px';
+	document.getElementById('mapcanvas').style.minHeight = '400px';
+	document.getElementById('mapcanvas').style.minWidth = '400px';
 	map = new google.maps.Map(document.getElementById('mapcanvas'), mapOptions);
 	directionsDisplay.setMap(map);
 	var start = startLocation;

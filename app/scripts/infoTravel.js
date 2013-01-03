@@ -41,10 +41,10 @@ function getInformationTravel(num) {
 	};
 	var travel = arrOfTravels[num];
 	var container = document.getElementById('header_traveller');
-	container.innerHTML = travel.user;
+	container.innerHTML = '<span id=\'user_name\'>' + '<span id=\'user_nameFirstLetter\'>' + travel.user.charAt(0) + '</span>' + travel.user.substring(1) + '</span>';
 	var userImg = document.createElement('img');
 	userImg.setAttribute('src', 'images/' + travel.userImage);
-	userImg.setAttribute('alt', '');
+	userImg.setAttribute('alt', ' ');
 	userImg.setAttribute('class', 'profile_photo_big');
 	container.appendChild(userImg);
 	document.getElementById('trip_info_destination').innerHTML = travel.location;

@@ -10,14 +10,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="stylesheet" type="text/css" href="styles/highslide.css" />
     <script src="scripts/vendor/modernizr.min.js"></script>
-
-	<style type="text/css">
-    #rateMe{float:left; clear:both; width:100%; height:auto; padding:0px; margin:0px; }
-    #rateMe .on{background:url('images/star_on.gif'); background-repeat: no-repeat; background-size: 100% 100%; }
-    #rateMe a{float:left; background:url('images/star_off.gif'); background-repeat: no-repeat; background-size: 100% 100%; width:24px; height:24px; }
-	img.profile_photo_big{width: 150px; height: 150px; border:1px; border-color: black; }
-	img.profile_photo_small{width: 50px; height: 50px; border:1px; border-color: black; }
-	</style>	
+	<link rel="stylesheet" type="text/css" href="styles/travelReview.css" />
 	<script type="text/javascript" src="scripts/eventManager.js"></script>
 	<script type="text/javascript" src="scripts/ratingsys.js"></script>
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
@@ -44,50 +37,53 @@
             </ul>
         </div>
     </nav>
-<aside>
+<aside class='aside_general_bar'>
 	Here there should be a list of similar related trips/place
 </aside>
-<article id='trip_infos'>
-	<header id='header_traveller'>
-	</header>
-	<section id='trip_info_destination'>
+<article class='container'>
+	<section id='trip_infos'>
+		<article id='text_infos'>
+			<header id='header_traveller'>
+			</header>
+			<section id='trip_info_destination'>
+			</section>
+			<section id='trip_info_dates'>
+			</section>
+			<section id='trip_info_rate_cell'>
+				Rate this Trip:
+				<div id="rateMe">
+					<a id="el_1"></a>
+					<a id="el_2"></a>
+					<a id="el_3"></a>
+					<a id="el_4"></a>
+					<span id='rating_saved' style='visibility: hidden;'>Thanks For Rating!</span>
+				</div>
+			</section>
+		</article>
+		<aside id='dynamic_map_container'>
+			<div id='mapcanvas'></div>
+		</aside>
+	<article id='trip_info_places'>
+	</article>
 	</section>
-	<section id='trip_info_dates'>
-	</section>
-	<section id='trip_info_rate_cell'>
-		Rate this Trip:
-		<div id="rateMe">
-			<a id="el_1"></a>
-			<a id="el_2"></a>
-			<a id="el_3"></a>
-			<a id="el_4"></a>
-			<span id='rating_saved' style='visibility: hidden;'>Thanks For Rating!</span>
-		</div>
-	</section>
-	<aside id='dynamic_map_container'>
-		<div id='mapcanvas'>
-		</div>
-	</aside>
-</article>
-<article id='trip_info_places'>
-</article>
-<article id='comments'>
-	<header id='comments_top'>
-		Leave a Comment!
-		<form class='comment_form'>
-			<textarea class='comment_textarea' rows='3' placeholder='Write a comment...'></textarea>
-			<br>
-			<input type='submit' value='Comment!'>
-		</form>
-	</header>
-	<section id='comment_list'>
-		<section class='travel_review_comment'>
-			<aside class='comment_photo'>
-			<img class='profile_photo_small' src='images/AlicePhoto.jpg' alt=''>
-			</aside>
-			<span class='comment_element'>Italy Is Amazing!</span>
+	<article id='comments'>
+		<header id='comments_top'>
+			Leave a Comment!
+			<form class='comment_form'>
+				<textarea class='comment_textarea' rows='3' placeholder='Write a comment...'></textarea>
+				<br>
+				<input type='submit' value='Comment!'>
+			</form>
+		</header>
+		<section id='comment_list'>
+			<section class='travel_review_comment'>
+				<aside class='comment_photo'>
+				<img class='profile_photo_small' src='images/AlicePhoto.jpg' alt=''>
+				</aside>
+				<span class='comment_element'>Italy Is Amazing!</span>
+			</section>
 		</section>
-	</section>
+	</article>
 </article>
 </body>
 </html>
