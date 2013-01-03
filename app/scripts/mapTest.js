@@ -1,38 +1,41 @@
 /*global google*/
 /*jslint browser:true */
 
-function setDynamicMap(choice) {
+function setDynamicMap(num) {
 	/*
 	richiede la presenza di un div id="mapcanvas"
 	usa oggetti startLocation / endLocation per creare un percorso
 	places indica i waypoints che il percorso deve compiere
 	*/
 	'use strict';
-	var places = [];
-	var startLocation;
-	var endLocation;
-	switch(choice) {
-	case 0:
-		places[0] = 'Rho, Italy';
-		places[1] = 'Busto Arsizio, Italy';
-		startLocation = 'Milano, Italy';
-		endLocation = 'Torino, Italy';
-		break;
-	case 1:
-		places[0] = 'Xian, China';
-		places[1] = 'Chengdu, China';
-		places[2] = 'Nanjing, China';
-		startLocation = 'Beijing, China';
-		endLocation = 'Shanghai, China';
-		break;
-	default:
-		places[0] = 'Marseille, France';
-		places[1] = 'Bordeaux, France';
-		places[2] = 'Paris, France';
-		startLocation = 'Nice, France';
-		endLocation = 'Nice, France';
-		break;
-	}
+
+	var travels = {
+		0: {
+			places: ['Marseille, France', 'Bordeaux, France', 'Paris, France'],
+			startLocation: 'Nice, France',
+			endLocation: 'Nice, France'
+		},
+		1: {
+			places: ['Rio De Janeiro, Brazil'],
+			startLocation: 'Sao Paulo, Brazil',
+			endLocation: 'Salvador, Brazil'
+		},
+		2: {
+			places: ['Xian, China', 'Chengdu, China', 'Nanjing, China'],
+			startLocation: 'Beijing, China',
+			endLocation: 'Shanghai, China'
+		},
+		3: {
+			places: ['Rho, Italy', 'Busto Arsizio, Italy'],
+			startLocation: 'Milano, Italy',
+			endLocation: 'Torino, Italy'
+		} 
+	};
+
+	var places = travels[num].places;
+	var startLocation = travels[num].startLocation;
+	var endLocation = travels[num].endLocation;
+
 	var directionsDisplay;
 	var directionsService = new google.maps.DirectionsService();
 	var map;
@@ -63,7 +66,7 @@ function setDynamicMap(choice) {
 		optimizeWaypoints: false
 	};
 	directionsService.route(request, function (result, status) {
-		if(status === google.maps.DirectionsStatus.OK) {
+		if (status === google.maps.DirectionsStatus.OK) {
 			directionsDisplay.setDirections(result);
 		} else {
 			console.log('Qualcosa è andato storto\n' + result + '\n' + 'status: ' + status);
