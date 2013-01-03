@@ -1,5 +1,5 @@
 /*global define*/
-define(['trip', 'jquery', 'thumbGenerator','popoverContentGenerator', 'fullcalendar', 'popover'], function (trip, $, thumbGenerator, contentGenerator) {
+define(['trip', 'jquery', 'thumbGenerator','popoverContentGenerator','slider', 'fullcalendar', 'popover'], function (trip, $, thumbGenerator, contentGenerator, slider) {
     'use strict';
     var thumbs = [{
         capt: 'Paris',
@@ -15,6 +15,7 @@ define(['trip', 'jquery', 'thumbGenerator','popoverContentGenerator', 'fullcalen
         uri: 'milano.jpeg'
     }];
     $(function () {
+        slider();
         var triplen, length = '',
             counter = 0,
             options = {
