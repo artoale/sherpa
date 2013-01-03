@@ -3,10 +3,8 @@
 * @version: 1.0
 */
 
-body {
-	margin-right: 30px;
-	margin-left: 30px;
-	margin-bottom: 60px;
+.container {
+	margin-top: 20px;
 }
 
 aside.aside_general_bar {
@@ -48,12 +46,13 @@ span.comment_text {
 	margin-left:25px;
 }
 
-#trip_details {
+.trip_details {
 	margin-left: 20%;
 	margin-right: 20%;
 	overflow: auto;
 	padding: 10px;
 	border: 5px solid #FFFF33;
+	background-color: #CCFFFF;
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
 }
@@ -61,12 +60,13 @@ span.comment_text {
 	float:right;
 	width: 40%;
 }
-#trip_infos {
+.trip_infos {
 	width:100%;
 	height: 100%;
 	overflow: auto;
 }
-#text_infos {
+
+.text_infos {
 	float: left;
 	width:55%;
 	height: 100%;
@@ -74,7 +74,7 @@ span.comment_text {
 	margin:10px;
 	margin-bottom: 20px;
 	margin-top: 0px;
-	background-color: #CCFFFF;
+	background-color: #99FFFF;
 	border: 5px;
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
@@ -118,6 +118,11 @@ img.profile_photo_big{
 	border:1px solid black; 
 }
 img.profile_photo_small{
+	width: 50px; height: 50px;
+	border:1px solid black; 
+}
+
+img.thumb_travel {
 	width: 50px; height: 50px;
 	border:1px solid black; 
 }

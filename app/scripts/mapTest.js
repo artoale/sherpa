@@ -8,33 +8,10 @@ function setDynamicMap(num) {
 	places indica i waypoints che il percorso deve compiere
 	*/
 	'use strict';
-
-	var travels = {
-		0: {
-			places: ['Marseille, France', 'Bordeaux, France', 'Paris, France'],
-			startLocation: 'Nice, France',
-			endLocation: 'Nice, France'
-		},
-		1: {
-			places: ['Rio De Janeiro, Brazil'],
-			startLocation: 'Sao Paulo, Brazil',
-			endLocation: 'Salvador, Brazil'
-		},
-		2: {
-			places: ['Xian, China', 'Chengdu, China', 'Nanjing, China'],
-			startLocation: 'Beijing, China',
-			endLocation: 'Shanghai, China'
-		},
-		3: {
-			places: ['Rho, Italy', 'Busto Arsizio, Italy'],
-			startLocation: 'Milano, Italy',
-			endLocation: 'Torino, Italy'
-		}
-	};
-
-	var places = travels[num].places;
-	var startLocation = travels[num].startLocation;
-	var endLocation = travels[num].endLocation;
+	var elem = getData().getSingleTravel(num, 0);
+	var places = elem.getPlaces();
+	var startLocation = elem.getStartLocation();
+	var endLocation = elem.getEndLocation();
 
 	var directionsDisplay;
 	var directionsService = new google.maps.DirectionsService();
@@ -44,8 +21,8 @@ function setDynamicMap(num) {
 		zoom: 7,
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
 	};
-	document.getElementById('mapcanvas').style.minHeight = '400px';
-	document.getElementById('mapcanvas').style.minWidth = '400px';
+	document.getElementById('mapcanvas').style.height = '350px';
+	document.getElementById('mapcanvas').style.width = '90%';
 	map = new google.maps.Map(document.getElementById('mapcanvas'), mapOptions);
 	directionsDisplay.setMap(map);
 	var start = startLocation;
@@ -65,10 +42,25 @@ function setDynamicMap(num) {
 		optimizeWaypoints: false
 	};
 	directionsService.route(request, function (result, status) {
-		if (status === google.maps.DirectionsStatus.OK) {
+		if(status === google.maps.DirectionsStatus.OK) {
 			directionsDisplay.setDirections(result);
 		} else {
 			console.log('Qualcosa è andato storto\n' + result + '\n' + 'status: ' + status);
 		}
 	});
+}
+
+function setStaticMap(num) {
+	'use strict';
+	var container = document.getElementById('mapcanvas');
+	var elem = getData().getAllTravels(num);
+	var im = document.createElement('img');
+	var st = 'http://maps.googleapis.com/maps/api/staticmap?markers=color:blue|size:small';
+	elem.forEach(function (el) {
+		st = st + '|' + el.getLocation();
+	});
+	st = st + '&zoom=0&size=400x400&sensor=false';
+	im.setAttribute('src', st);
+	im.setAttribute('alt', ' ');
+	container.appendChild(im);
 }
