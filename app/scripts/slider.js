@@ -21,7 +21,7 @@ define(['jquery'], function($) {
             var content = document.createElement('div');
             var array = Object.keys(optcontent);
             array.forEach(function(element) {
-            $(content).append($('<span class="span4"><div class="uparrow">&lsaquo;</div><div class="tooglable" style ="cursor:hand">' + element + '</div></span>').css({   
+            $(content).append($('<span class="span4"><div class="uparrow">&lsaquo;</div><div class="tooglable" style ="cursor:pointer">' + element + '</div></span>').css({   
                              margin: ''
                 }));
             });
@@ -40,7 +40,7 @@ define(['jquery'], function($) {
                 'font-size': '40px',
                 '-moz-transform': 'rotate(270deg)',
                 '-webkit-transform': 'rotate(270deg)',
-                'cursor':'hand'
+                'cursor':'pointer'
             });
             return content;
 
