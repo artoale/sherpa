@@ -30,7 +30,7 @@ define(['jquery'], function ($) {
             }
         }
 
-        image.src = 'images/thumb/' + event.uri;
+        image.src =  event.uri;
         $(image).addClass('popoverimg');
 
         content = $(template.replace('[[CONTENT]]', contentString)).append(image).append(removeButton).append(closeButton);
