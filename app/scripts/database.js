@@ -53,7 +53,7 @@ function getData() {
 			title: 'It\'s Pyramid time!',
 			location: 'Egypt',
 			fromDate: new Date(2009, 10, 1),
-			toDate: new Date(2011, 10, 14),
+			toDate: new Date(2009, 10, 14),
 			places: ['Alexandria, Egypt', 'Suez, Egypt', 'Luxor, Egypt', 'Aswan, Egypt'],
 			startLocation: 'Cairo, Egypt',
 			endLocation: 'Cairo, Egypt',

@@ -21,6 +21,6 @@ function getInformationTravel(num, numTrav) {
 	document.getElementById('trip_info_fromdate').innerHTML += travel.getFromDate().getCustomDate();
 	document.getElementById('trip_info_todate').innerHTML += travel.getToDate().getCustomDate();
 	document.getElementById('trip_description').innerHTML = travel.getDescription();
-	document.getElementById('trip_author').innerHTML += elem.getUser(num) + '<br><a href=\'UserReview.html?user='+num+'\'<button class=\'btn btn-info\' type=\'button\'> Go To Profile!</button></a>';
+	document.getElementById('trip_author').innerHTML += elem.getUser(num) + '<br><button class=\'btn btn-info\' type=\'button\' onclick="document.location=\'UserReview.html?user='+num+'\'\"> Go To Profile!</button></a>';
 
 }
