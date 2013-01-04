@@ -53,6 +53,7 @@ define(['jquery'], function ($) {
             var content = document.createElement('div');
             var bottomBar = document.createElement('div');
             var visible = true;
+            slider.id = "slider" ;
             content.id = "contentBar";
             $(header).addClass('row-fluid');
             var doHide = function () {
@@ -111,6 +112,10 @@ define(['jquery'], function ($) {
                 if(visible) {
 
                     $(content).fadeOut('fast', function () {
+                        $(opt.content).each(function(key,el){
+                            opt.content[key] = $("#"+key);
+
+                        })
                         $(content).empty();
                         if($(event.target).is("#closebar")) {
                             doHide();
@@ -125,7 +130,7 @@ define(['jquery'], function ($) {
                     });
                 } else {
                     if($(event.target).hasClass("tooglable")) {
-                                                $(content).append(opt.content[event.target.innerHTML]);
+                        $(content).append(opt.content[event.target.innerHTML]);
                         $(slider).append($(content));
                         $(content).show();
                         opt.content[event.target.innerHTML].show();
