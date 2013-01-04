@@ -10,4 +10,6 @@ function fillUserInfo(num) {
 	container.innerHTML = elem.getUserPageTitle(num);
 	document.getElementById('trip_author').innerHTML += elem.getUser(num);
 	document.getElementById('trip_description').innerHTML = elem.getDescription(num);
+	if (num==2)
+		document.getElementById('button_friend').style.visibility='hidden';
 }
