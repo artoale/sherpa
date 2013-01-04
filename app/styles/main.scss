@@ -95,14 +95,10 @@ img.popoverimg{
 	display: none;
 }
 
-#all{
+.contentBar{
 	display: none;
-}
-#friends{
-	display: none;
-}
-#deleted{
-	display: none;
+	width: 100%;
+	text-align: center;
 }
 .uparrow{
 	-moz-transform:rotate(90deg);
@@ -132,6 +128,11 @@ margin-right: 20px;
 	margin-right: 60px;
 }
 .tooglable{
+}
+
+.ulcontentBar{
+	width: 100%;
+	text-align: center;
 }
 
 

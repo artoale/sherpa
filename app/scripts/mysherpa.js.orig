@@ -2,20 +2,25 @@
 define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider', 'addRemovePoi', 'fullcalendar', 'popover'], function (trip, $, thumbGenerator, contentGenerator, slider, addRemove) {
     'use strict';
     var thumbs = [{
-        capt: 'Antibes',
-        uri: 'images/antibes.jpg'
-    }, {
-        capt: 'Cannes',
-        uri: 'images/cannes.jpg'
-    }, {
-        capt: 'Nice',
-        uri: 'images/nice.jpg'
-    }, {
-        capt: 'Toulouse',
-        uri: 'images/Toulouse.jpg'
-    },{
         capt: 'Paris',
-        uri: 'images/paris.jpeg'
+        uri: 'images/thumb/paris.jpeg'
+    }, {
+        capt: 'London',
+        uri: 'images/thumb/london.jpeg'
+    }, {
+        capt: 'NewYork',
+        uri: 'images/thumb/newyork.jpeg'
+    }, {
+        capt: 'Milano',
+<<<<<<< HEAD
+        uri: 'images/thumb/milano.jpeg'
+    },{
+=======
+        uri: 'milano.jpeg'
+    }, {
+>>>>>>> 363774d507f28eba8f220cb7d3db3914ef41940e
+        capt: 'Paris',
+        uri: 'images/thumb/paris.jpeg'
     }, {
         capt: 'London',
         uri: 'images/thumb/london.jpeg'
@@ -26,59 +31,6 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         capt: 'Milano',
         uri: 'images/thumb/milano.jpeg'
     }];
-
-       var friendsArray = [{
-        capt: 'Baiju',
-        uri: 'images/China_Bob/baiju.jpg'
-    }, {
-        capt: 'Beijing',
-        uri: 'images/China_Bob/beijing.jpg'
-    }, {
-        capt: 'Brian',
-        uri: 'images/China_Bob/brian.jpg'
-    }, {
-        capt: 'Chengdu',
-        uri: 'images/China_Bob/chengdu.jpg'
-    }, {
-        capt: 'Shangai',
-        uri: 'images/China_Bob/shanghai.jpg'
-    }, {
-        capt: 'Sheraton',
-        uri: 'images/China_Bob/sheraton.jpg'
-    }, {
-        capt: 'Shinlu',
-        uri: 'images/China_Bob/shinlu.jpg'
-    }, {
-        capt: 'Table',
-        uri: 'images/China_Bob/table.jpg'
-    }];
-
-       var allArray = [{
-        capt: 'Milan',
-        uri: 'images/Italy_Alice/milan.jpg'
-    }, {
-        capt: 'Turin',
-        uri: 'images/Italy_Alice/turin.jpg'
-    }, {
-        capt: 'Rho',
-        uri: 'images/Italy_Alice/rho.jpg'
-    }, {
-        capt: 'Busto',
-        uri: 'images/Italy_Alice/busto-arsizio.jpg'
-    }, {
-        capt: 'RhoGiangi',
-        uri: 'images/Italy_Alice/dal_giangi_rho.jpg'
-    }, {
-        capt: 'Pisa',
-        uri: 'images/Italy_Alice/hilton_milan.jpg'
-    }, {
-        capt: 'Chivasso',
-        uri: 'images/Italy_Alice/windsor_turin.jpg'
-    }, {
-        capt: 'Centre',
-        uri: 'images/Italy_Alice/montenapoleone_milan.jpg'
-    }];
-
 
     $(function () {
 
@@ -240,19 +192,21 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
             ulRowfluid = document.createElement('ul');
             $(ulRowfluid).addClass("listPoiBar");
             $(ulRowfluid).addClass("unstyled");
-            $(ulRowfluid).addClass("ulcontentBar");
             
-            vettore.forEach(function(thumb,index) {
+            thumbs.forEach(function(thumb,index) {
              $(ulRowfluid).append(thumbGenerator(thumb.uri, thumb.capt , 2 , "add" , "btn-success"));
             });
             $(container).append(ulRowfluid);
         };
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 363774d507f28eba8f220cb7d3db3914ef41940e
         generateContentCarousel();
-        generateContentBar("friends",friendsArray);
-        generateContentBar("all",allArray)
+        generateContentBar("friends");
+        generateContentBar("all")
         slider(slideroptions);
         addRemove(mycontent);
 

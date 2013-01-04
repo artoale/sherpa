@@ -2,6 +2,14 @@
 	float:left;
 }
 
+article.container.streamreview {
+	margin-top: 30px;
+	text-align: left;
+}
+aside.aside_general_bar {
+	height: 500px;
+}
+
 .loading{
 	background-color: lightblue;
 	text-align: center;
@@ -14,14 +22,10 @@
 	margin-bottom: 10px;
 	text-align: center;
 }
-.top-to-bottom {
-    border-width:3px;
-    -webkit-border-image: 
-    	-webkit-gradient(linear, 0 0, 0 100%, from(black), to(rgba(0, 0, 0, 0))) 1 100%;
-    -webkit-border-image: 
-    	-webkit-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;
-    -o-border-image:
-    	     -o-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;
-    -moz-border-image:
-    	   -moz-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;    
+
+img.profile_photo_big{
+	width: 75px; height: 75px;
+	margin: 20px;
+	border:1px solid black; 
 }
+

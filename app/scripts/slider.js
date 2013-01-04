@@ -31,6 +31,7 @@ define(['jquery'], function ($) {
     var generateCloseIcon = function () {
             var content = document.createElement('div');
             content.id = "closebar";
+            $(content).addClass("tooglable");
 
             content.innerHTML = '&lsaquo;';
             $(content).css({
@@ -109,18 +110,22 @@ define(['jquery'], function ($) {
 
 
             header.addEventListener('click', function (event) {
+                
+                if($(event.target).hasClass("tooglable")) {
                 if(visible) {
 
                     $(content).fadeOut('fast', function () {
+
                         $(opt.content).each(function(key,el){
                             opt.content[key] = $("#"+key);
 
                         });
                         $(content).empty();
+                        
                         if($(event.target).is("#closebar")) {
                             doHide();
                             $('#closebar').hide();
-                        } else if($(event.target).hasClass("tooglable")) {
+                        } else  {
                             $(content).append(opt.content[event.target.innerHTML]);
                             $(slider).append($(content));
                             $(content).fadeIn("fast");
@@ -142,6 +147,7 @@ define(['jquery'], function ($) {
                         doShow();
                     }
                 }
+            }
             });
 
 
