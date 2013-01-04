@@ -1,6 +1,6 @@
 
-define(['mapTest', 'ratingsys', 'infoTravel', 'places_images_generator', 'comment_writer', 'slider', 'jquery','generate_bar_thumb', 'eventManager', 'vendor/highslide', 'database'], 
-	function (mapTest, ratingsys, infoTravel, places_images_generator, writeComment, slider, $,generateBarThumb) {
+define(['mapTest', 'ratingsys', 'infoTravel', 'places_images_generator', 'comment_writer', 'slider', 'jquery','generate_bar_thumb', 'jquery.jcarousel.min','eventManager', 'vendor/highslide', 'database'], 
+	function (mapTest, ratingsys, infoTravel, places_images_generator, writeComment, slider, $,generateBarThumb, jCarousel) {
 	var num=3;
 	var numTrav=1;
 
@@ -42,5 +42,17 @@ define(['mapTest', 'ratingsys', 'infoTravel', 'places_images_generator', 'commen
 		speed: 'fast'
 	};
 	slider(slideroptions);
+	require([jCarousel], function (s){
+	$('#mycarousel').jcarousel({
+                    vertical: true,
+                    scroll: 1,
+                    animation: "slow",
+                    wrap: "circular",
+                    auto: 2,
+                    visible: 3,
+                    rtl: false
+                });
+	});
+
 	return "OK";
 });

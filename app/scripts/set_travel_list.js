@@ -12,7 +12,7 @@ function setTravelList(num) {
 	elem.forEach(function (trav) {
 		var cont = document.createElement('section');
 		cont.setAttribute('class', 'travel_review_comment row');
-		cont.innerHTML = '<img class=\'span2 thumb_travel\' src=\'images/' + trav.getLocation() + '_' + user + '/' + trav.getPictures()[0].uri + '\' alt=\' \'>' + '<dl class=\' comment_element span3\'>' + '<dt> Location: </dt><dd>' + trav.getLocation() + '</dd>' + '<dt> From: </dt><dd>' + trav.getFromDate().getCustomDate() + '</dd>' + '<dt> To: </dt><dd>' + trav.getToDate().getCustomDate() + '</dd>' + '</dl>' + '<dl class=\' comment_element span4\'>' + '<dt> Description: </dt><dd>' + trav.getDescription() + '</dd>' + '</dl>' 
+		cont.innerHTML = '<img class=\'span2 thumb_travel\' src=\'images/' + trav.getLocation() + '_' + user + '/' + trav.getPictures()[0].uri + '\' alt=\' \'>' + '<dl class=\' comment_element span3\'>' + '<dt> Where: </dt><dd>' + trav.getLocation() + '</dd>' + '<dt> From: </dt><dd>' + trav.getFromDate().getCustomDate() + '</dd>' + '<dt> To: </dt><dd>' + trav.getToDate().getCustomDate() + '</dd>' + '<dt> Average Rating: </dt><dd>  <img src=\'images/star_on.png\' alt=\' \' class=\'average\'> <img src=\'images/star_on.png\' alt=\' \' class=\'average\'><img src=\'images/star_on.png\' alt=\' \' class=\'average\'><img src=\'images/star_off.png\' alt=\' \' class=\'average\'> </dd>' + '</dl>' + '<dl class=\' comment_element span4\'>' + '<dt> Description: </dt><dd>' + trav.getDescription() + '</dd>' + '</dl>' 
 		+ '<a href=TravelReview.html?user='+num+'&trav='+i+'><button style=\'margin-top: 20px; margin-bottom:20px\'class=\'btn btn-info span1\' type=\'button\'> Take a look! </button></a>';
 		container.appendChild(cont);
 		i+=1;
