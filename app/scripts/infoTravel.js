@@ -16,12 +16,11 @@ function getInformationTravel(num, numTrav) {
 	userImg.setAttribute('alt', ' ');
 	userImg.setAttribute('class', 'profile_photo_big');
 	document.getElementById('trip_author').appendChild(userImg);
-	//container.innerHTML += '<span class=\'title\'>' + '<span class=\'titleFirstLetter\'>' + travel.getTitle().charAt(0) + '</span>' + travel.getTitle().substring(1) + '</span>';
 	container.innerHTML = travel.getTitle();
 	document.getElementById('trip_info_destination').innerHTML += travel.getLocation();
 	document.getElementById('trip_info_fromdate').innerHTML += travel.getFromDate().getCustomDate();
 	document.getElementById('trip_info_todate').innerHTML += travel.getToDate().getCustomDate();
 	document.getElementById('trip_description').innerHTML = travel.getDescription();
-	document.getElementById('trip_author').innerHTML += elem.getUser(num);
+	document.getElementById('trip_author').innerHTML += elem.getUser(num) + '<br><a href=\'UserReview.html?user='+num+'\'<button class=\'btn btn-info\' type=\'button\'> Go To Profile!</button></a>';
 
 }

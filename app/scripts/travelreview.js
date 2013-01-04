@@ -2,11 +2,14 @@
 define(['mapTest', 'ratingsys', 'infoTravel', 'places_images_generator', 'comment_writer', 'slider', 'jquery','generate_bar_thumb', 'eventManager', 'vendor/highslide', 'database'], 
 	function (mapTest, ratingsys, infoTravel, places_images_generator, writeComment, slider, $,generateBarThumb) {
 	var num=3;
-
-	var parser=document.createElement('a');
-	parser.href=window.location.href;
-	alert(req(window.location.href));
 	var numTrav=1;
+
+	var match = window.location.href.match(/\?user=(\d)/);
+	var match2 = window.location.href.match(/trav=(\d)/);
+	if (match)
+		num=match[1];
+	if (match2)
+		numTrav=match2[1];
 	setDynamicMap(num,numTrav);
 	setRatingSystem();
 	generateImagesThumbnails(num,numTrav);
