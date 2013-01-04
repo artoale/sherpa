@@ -3,7 +3,7 @@ define(['trip'], function (trip) {
     'use strict';
 
     $(function () {
-        trip.load();
+        trip.clear();
         var options = {
             format: 'dd/mm/yyyy',
             weekStart: 1
