@@ -45,52 +45,65 @@
 	<section class='aside_general_bar span2'>
 	Here there should be a list of similar related trips/place
 	</section>
-	<section id='trip_infos' class='span10 trip_infos'>
+	<section id='main_page' class='span10 main_page'>
 		<div class='row'>
 			<article id='text_infos' class='text_infos span5'>
-				<header id='header_traveller'>
-				</header>
+				<section id='header_traveller' class='travel_title'>
+				</section>
 				<section id='trip_details' class='trip_details'>
-					<div id='trip_info_destination'>
+					<div id='trip_author'>
 					</div>
-					<div id='trip_info_dates'>
+					<div id='trip_info_destination' class='trip_details_entry'>
+					Where: 
 					</div>
-					<div id='trip_info_rate_cell'>
+					<div id='trip_info_fromdate'  class='trip_details_entry'>
+					From: 
+					</div>
+					<div id='trip_info_todate'  class='trip_details_entry'>
+					To: 
+					</div>
+					<div id='trip_info_rate_cell'  class='trip_details_entry'>
 						Rate this Trip:
 						<div id="rateMe">
 							<a id="el_1"></a>
 							<a id="el_2"></a>
 							<a id="el_3"></a>
 							<a id="el_4"></a>
-							<span id='rating_saved' style='visibility: hidden;'>Thanks For Rating!</span>
+							<span id='rating_saved' style='margin-left: 15px; color: red; visibility: hidden;'>Thanks For Rating!</span>
 						</div>
 					</div>
 				</section>
+				<div id='trip_description'  class='trip_details_entry'>
+				</div>
 			</article>
-		<aside id='dynamic_map_container' class='span5'>
-			<div id='mapcanvas'></div>
-		</aside>
+			<aside id='dynamic_map_container' class='span5'>
+				<div id='mapcanvas'></div>
+			</aside>
 		</div>
-		<article id='trip_info_places' class='trip_info_places'>
-		</article>
-	</section>
-	<section id='comments' class='comments'>
-		<article id='comments_top'>
-			Leave a Comment!
-			<div class='comment_form'>
-					<textarea id='textarea_comment' rows='3' placeholder='Write a comment...'></textarea>
-					<br>
-					<button class='btn btn-primary' type='submit' onclick='writeComment()'>Comment!</button>
-			</div>
-		</article>
-		<article id='comment_list'>
-			<section class='travel_review_comment row'>
-				<img class='comment_photo span2 profile_photo_small' src='images/AlicePhoto.jpg' alt=''>
-				<dl class='comment_element span10 dl-horizontal'>
-				<dt>Alice: </dt>
-				<dd>Italy Is Amazing!</dd>
-			</section>
-		</article>
+		<div class="row">
+			<article id='trip_info_places' class='trip_info_places span10'>
+			</article>
+		</div>
+	<div class="row">
+		<section id='comments' class='comments span10'>
+			<article id='comments_top' class='comments_top'>
+				<h5 style='margin-left:5px'>Leave a Comment!</h5>
+				<div class='comment_form'>
+						<textarea id='textarea_comment' rows='3' cols='50' placeholder='Write a comment...'></textarea>
+						<br>
+						<button class='btn btn-primary' type='submit' onclick='writeComment()'>Comment!</button>
+				</div>
+			</article>
+			<article id='comment_list' class='comment_list'>
+				<section class='travel_review_comment row'>
+					<img class='comment_photo span2 profile_photo_small' src='images/AlicePhoto.jpg' alt=''>
+					<dl class='comment_element span8'>
+					<dt>Alice: </dt>
+					<dd>Italy Is Amazing!</dd>
+				</section>
+			</article>
+		</section>
+	</div>
 	</section>
 </article>
 

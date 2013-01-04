@@ -73,12 +73,14 @@ function getData() {
 		user: 'Alice',
 		userImage: 'AlicePhoto.jpg',
 		travels: [{
+			title: 'Alice in WonderLand',
 			location: 'Italy',
 			fromDate: new Date(2012, 7, 5),
 			toDate: new Date(2012, 7, 8),
 			places: ['Rho, Italy', 'Busto Arsizio, Italy'],
 			startLocation: 'Milano, Italy',
 			endLocation: 'Torino, Italy',
+			description: 'I went there on a business trip, but luckily I had the opportunity to visit some places.\nItaly is wonderful! I especially suggest to visit Turin and don\'t lose the opportunity to eat at the restaurant "Dal Giangi", in Rho, a special place (if you can afford it!)',
 			pictures: [{
 				capt: 'Dome, Milan, Italy',
 				uri: 'milan.jpg'
@@ -108,8 +110,7 @@ function getData() {
 				uri: 'montenapoleone_milan.jpg'
 			}]
 
-		},
-		{
+		}, {
 			location: 'Brazil',
 			fromDate: new Date(2010, 11, 5),
 			toDate: new Date(2010, 11, 25),
@@ -166,6 +167,12 @@ function getData() {
 			};
 			trav.getEndLocation = function () {
 				return trav.endLocation;
+			};
+			trav.getDescription = function () {
+				return trav.description;
+			};
+			trav.getTitle = function () {
+				return trav.title;
 			};
 		});
 	});
