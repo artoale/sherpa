@@ -2,10 +2,11 @@
 define(['mapTest', 'ratingsys', 'infoTravel', 'places_images_generator', 'comment_writer', 'slider', 'jquery','generate_bar_thumb', 'eventManager', 'vendor/highslide', 'database'], 
 	function (mapTest, ratingsys, infoTravel, places_images_generator, writeComment, slider, $,generateBarThumb) {
 	var num = 3;
+	var numTrav=0;
 	setDynamicMap(num);
 	setRatingSystem();
 	generateImagesThumbnails(num);
-	getInformationTravel(num);
+	getInformationTravel(num,numTrav);
 	generateBarThumbnails(num);
 	var mycontent = {};
 	Object.defineProperties(mycontent, {

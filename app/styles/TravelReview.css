@@ -8,69 +8,68 @@ article.container.travelreview {
 	text-align: left;
 }
 
-aside.comment_photo {
-	float: left;
-	min-width: 50px;
-}
-
 .trip_info_places {
-	position: relative;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
 
 .comments {
-	border:10px;
 	margin-top: 30px;
-	overflow: auto;
-	padding: 20px; 
+}
+
+.comments_top {
+	border:1px solid black;
 }
 
 .comment_form {
 	margin: 20px;
 }
 
-article.comment_element {
-	float:left;
+.comment_list {
+	margin-top:20px;
 }
 
-span.comment_author {
-}
-
-span.comment_text {
-	margin-top: 5px;
+.comment_element {
+	margin-top: 0px;
 }
 
 .trip_details {
 	margin-left: 20%;
-	margin-right: 20%;
-	overflow: auto;
 	padding: 10px;
-	border: 5px solid #FFFF33;
-	background-color: #CCFFFF;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 15px;
+	font-size: 18px;
+}
+
+.trip_details:first-letter {
+	font-size: 22px;
+}
+
+.trip_details_entry {
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 .text_infos {
 	margin:10px;
 	margin-bottom: 20px;
 	margin-top: 0px;
-	background-color: #99FFFF;
-	border: 5px;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 15px;
 
 }
-.user_name {
-	font-size: 24px;
-	margin: 20px;
-}
-.user_nameFirstLetter {
+.travel_title{
 	font-size: 36px;
+	margin-left: 30px;
+	margin-top: 5px;
+}
+.travel_title:first-letter {
+	font-size: 48px;
 }
 
 #rateMe{
 	padding:0px;
 	margin:0px; 
+	margin-left: 20px;
+	margin-top: 15px;
 }
 #rateMe .on{
 	background:url('../images/star_on.png');
@@ -85,8 +84,7 @@ span.comment_text {
 	width:24px; height:24px; 
 }
 img.profile_photo_big{
-	float: right;
-	width: 150px; height: 150px;
+	width: 75px; height: 75px;
 	margin: 20px;
 	border:1px solid black; 
 }
@@ -98,4 +96,16 @@ img.profile_photo_small{
 img.thumb_travel {
 	width: 50px; height: 50px;
 	border:1px solid black; 
+}
+
+#hotels {
+	display: none;
+}
+
+#restaurants {
+	display: none;
+}
+
+#shopping {
+	display: none;
 }
