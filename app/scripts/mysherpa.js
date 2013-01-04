@@ -1,5 +1,5 @@
 /*global define*/
-define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider','addRemovePoi' ,'fullcalendar', 'popover'], function(trip, $, thumbGenerator, contentGenerator, slider, addRemove) {
+define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider', 'addRemovePoi', 'fullcalendar', 'popover'], function (trip, $, thumbGenerator, contentGenerator, slider, addRemove) {
     'use strict';
     var thumbs = [{
         capt: 'Paris',
@@ -14,7 +14,8 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         capt: 'Milano',
         uri: 'milano.jpeg'
     }];
-    $(function() {
+    
+    $(function () {
 
         var mycontent = {};
 
@@ -46,7 +47,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         };
         slider(slideroptions);
         addRemove(mycontent);
-        
+
         var triplen, length = '',
             counter = 0,
             options = {
@@ -60,7 +61,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
                 editable: true,
                 droppable: true,
                 // this allows things to be dropped onto the calendar !!!
-                drop: function(date, allDay) { // this function is called when something is dropped
+                drop: function (date, allDay) { // this function is called when something is dropped
                     // retrieve the dropped element's stored Event Object
                     var originalEventObject = $(this).data('eventObject');
 
@@ -79,7 +80,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
 
                     // remove the element from the "Draggable Events" list
                     badge = $(this).find('.badge');
-                    if(badge.size()) {
+                    if (badge.size()) {
                         badge.html(parseInt(badge.html(), 10) + 1);
                     } else {
                         $('<span class="badge badge-info">1</span>').appendTo($(this).find('div'));
@@ -88,14 +89,14 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
 
 
                 },
-                eventAfterRender: function(event, element) {
+                eventAfterRender: function (event, element) {
 
 
                     $(element).popover({
                         title: event.title,
                         placement: 'right',
                         html: true,
-                        content: function() {
+                        content: function () {
                             return contentGenerator(event, element);
                         }
                     });
@@ -120,7 +121,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         $('#calendar').fullCalendar(options);
         $('#length').html(length);
 
-        thumbs.forEach(function(thumb) {
+        thumbs.forEach(function (thumb) {
             var node = $(thumbGenerator(thumb.uri, thumb.capt));
             var eventObject = {
                 title: thumb.capt,
@@ -135,7 +136,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         thumbContainer.find('li').draggable({
             revert: 'invalid',
             revertDuration: 0,
-            helper: function() {
+            helper: function () {
                 //generate a minithumb for drag&drop
                 var thumb = $(this).data('eventObject');
                 return $(thumbGenerator(thumb.uri, thumb.title, 1));

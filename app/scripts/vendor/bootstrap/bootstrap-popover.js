@@ -22,7 +22,8 @@
 
   "use strict"; // jshint ;_;
 
-
+console.log('loading popover');
+console.log($.fn.btooltip);
  /* POPOVER PUBLIC CLASS DEFINITION
   * =============================== */
 
@@ -34,7 +35,7 @@
   /* NOTE: POPOVER EXTENDS BOOTSTRAP-TOOLTIP.js
      ========================================== */
 
-  Popover.prototype = $.extend({}, $.fn.tooltip.Constructor.prototype, {
+  Popover.prototype = $.extend({}, $.fn.btooltip.Constructor.prototype, {
 
     constructor: Popover
 
@@ -93,7 +94,7 @@
 
   $.fn.popover.Constructor = Popover
 
-  $.fn.popover.defaults = $.extend({} , $.fn.tooltip.defaults, {
+  $.fn.popover.defaults = $.extend({} , $.fn.btooltip.defaults, {
     placement: 'right'
   , trigger: 'click'
   , content: ''
