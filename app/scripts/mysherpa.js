@@ -170,26 +170,29 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
             }
         });
 
-        var generateContentCarousel = function () {
-                var container = $("#suggestion > .container"),
-                    ulRowfluid = document.createElement('ul');
-                $(ulRowfluid).addClass("listPoiCar");
 
-                thumbs.forEach(function (thumb, index) {
-                    $(ulRowfluid).append(thumbGenerator(thumb.uri, thumb.capt, 2, "remove", "btn-danger"));
-                });
-                $(container).append(ulRowfluid);
-            };
-        var generateContentBar = function (selector) {
-                var container = $('#' + selector),
-                    ulRowfluid = document.createElement('ul');
-                $(ulRowfluid).addClass("listPoiBar");
-
-                thumbs.forEach(function (thumb, index) {
-                    $(ulRowfluid).append(thumbGenerator(thumb.uri, thumb.capt, 2, "add", "btn-success"));
-                });
-                $(container).append(ulRowfluid);
-            };
+        var generateContentCarousel = function(){
+            var container = $("#suggestion > .container"),
+            ulRowfluid = document.createElement('ul');
+            $(ulRowfluid).addClass("listPoiCar");
+            $(ulRowfluid).addClass("unstyled");
+            
+            thumbs.forEach(function(thumb,index) {
+             $(ulRowfluid).append(thumbGenerator(thumb.uri, thumb.capt ,2 , "remove" , "btn-danger"));
+            });
+            $(container).append(ulRowfluid);
+        };
+        var generateContentBar = function(selector){
+            var container = $('#'+selector),
+            ulRowfluid = document.createElement('ul');
+            $(ulRowfluid).addClass("listPoiBar");
+            $(ulRowfluid).addClass("unstyled");
+            
+            thumbs.forEach(function(thumb,index) {
+             $(ulRowfluid).append(thumbGenerator(thumb.uri, thumb.capt , 2 , "add" , "btn-success"));
+            });
+            $(container).append(ulRowfluid);
+        };
 
         generateContentCarousel();
         generateContentBar("friends");

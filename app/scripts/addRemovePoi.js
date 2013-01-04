@@ -7,7 +7,7 @@ define(['jquery','thumbGenerator'], function ($,thumbGenerator) {
 			//listener sugli elementi del carosello
 			targetListenerCar.on('click', function (event) {
 				// body...
-
+				event.preventDefault();
 				//viene eliminato l'elemento selezionato e aggiunto ai deleted
 				if($(event.target).hasClass('btn-danger')) {
 					
@@ -16,9 +16,9 @@ define(['jquery','thumbGenerator'], function ($,thumbGenerator) {
 						var pippo = $(removeDiv).children(".caption")
 						var prova = $(removeDiv).children(".caption").attr("id");
 						var appendDivDel = $(thumbGenerator( $(removeDiv).children("img").attr('src').replace('images/thumb/','') , $(removeDiv).children(".caption").attr("id"),2,"add","btn-success"));
-						$("#deleted").append(appendDivDel);
+						$("#deleted").children('ul').append(appendDivDel);
 						
-						$(removeDiv).remove();
+						$(removeDiv).parent("li").remove();
 						
 				}
 			});
