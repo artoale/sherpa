@@ -33,27 +33,25 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
 
 
         Object.defineProperties(mycontent, {
-            "friends": {
-                value: $("#friends"),
+            friends: {
+                value: $('#friends'),
                 enumerable: true
             },
-            "all": {
-                value: $("#all"),
+            all: {
+                value: $('#all'),
                 enumerable: true
             },
-            "deleted": {
-                value: $("#deleted"),
+            deleted: {
+                value: $('#deleted'),
                 enumerable: true
             }
         });
 
         var slideroptions = {
-            column: ['Hotel', 'Restaurant', 'Shopping'],
             position: 'bottom',
             headerSize: '40px',
             contentSize: '200px',
             content: mycontent,
-            headerContent: ['restaurants', 'all', 'deleted'],
             speed: 'fast'
         };
 
@@ -93,9 +91,13 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
                     if (badge.size()) {
                         badge.html(parseInt(badge.html(), 10) + 1);
                     } else {
-                        $('<span class="badge badge-info">1</span>').appendTo($(this).find('div'));
+                        $('<a class="badge badge-info" style="float: right">1</a>').appendTo($(this).find('p'));
                     }
-                    $(this).appendTo(thumbContainer);
+                    if (copiedEventObject.category === 'poi') {
+                        $(this).appendTo(thumbContainer);
+                    } else {
+                        $(this).appendTo($('#' + copiedEventObject.category));
+                    }
 
 
                 },
@@ -136,21 +138,8 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
             var eventObject = {
                 title: thumb.capt,
                 uri: thumb.uri,
-                nodeSrc: node
-            };
-
-            // store the Event Object in the DOM element so we can get to it later
-            node.data('eventObject', eventObject);
-            thumbContainer.append(node);
-        });
-
-
-        thumbs.forEach(function (thumb) {
-            var node = $(thumbGenerator(thumb.uri, thumb.capt));
-            var eventObject = {
-                title: thumb.capt,
-                uri: thumb.uri,
-                nodeSrc: node
+                nodeSrc: node,
+                category: 'poi' //available: poi, restaurant, hotel, shopping
             };
 
             // store the Event Object in the DOM element so we can get to it later
@@ -171,33 +160,95 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         });
 
 
-        var generateContentCarousel = function(){
-            var container = $("#suggestion > .container"),
-            ulRowfluid = document.createElement('ul');
-            $(ulRowfluid).addClass("listPoiCar");
-            $(ulRowfluid).addClass("unstyled");
-            
-            thumbs.forEach(function(thumb,index) {
-             $(ulRowfluid).append(thumbGenerator(thumb.uri, thumb.capt ,2 , "remove" , "btn-danger"));
-            });
-            $(container).append(ulRowfluid);
-        };
-        var generateContentBar = function(selector){
-            var container = $('#'+selector),
-            ulRowfluid = document.createElement('ul');
-            $(ulRowfluid).addClass("listPoiBar");
-            $(ulRowfluid).addClass("unstyled");
-            
-            thumbs.forEach(function(thumb,index) {
-             $(ulRowfluid).append(thumbGenerator(thumb.uri, thumb.capt , 2 , "add" , "btn-success"));
-            });
-            $(container).append(ulRowfluid);
-        };
+        var generateContentCarousel = function () {
+                var container = $('#suggestion > .container'),
+                    ulRowfluid = document.createElement('ul');
+                $(ulRowfluid).addClass('listPoiCar');
+                $(ulRowfluid).addClass('unstyled');
+
+                thumbs.forEach(function (thumb) {
+                    $(ulRowfluid).append(thumbGenerator(thumb.uri, thumb.capt, 2, 'remove', 'btn-danger'));
+                });
+                $(container).append(ulRowfluid);
+            };
+        var generateContentBar = function (selector, objectArray) {
+                var container = $('#' + selector),
+                    ulRowfluid = document.createElement('ul');
+                $(ulRowfluid).addClass('listPoiBar');
+                $(ulRowfluid).addClass('unstyled');
+                var iterateOn = objectArray || thumbs;
+                iterateOn.forEach(function (thumb) {
+                    $(ulRowfluid).append(thumbGenerator(thumb.uri, thumb.capt, 2, 'add', 'btn-success'));
+                });
+                $(container).append(ulRowfluid);
+            };
+        var generateContentBarTwo = function (selector, category, objectArray) {
+                var container = $('#' + selector),
+                    ulRowfluid = document.createElement('ul');
+                $(ulRowfluid).addClass('listPoiBar');
+                $(ulRowfluid).addClass('unstyled');
+                var iterateOn = objectArray || thumbs;
+                iterateOn.forEach(function (thumb) {
+                    var node = $(thumbGenerator(thumb.uri, thumb.capt, 2));
+                    node.draggable({
+                        revert: 'invalid',
+                        revertDuration: 0,
+                        helper: function () {
+                            //generate a minithumb for drag&drop
+                            var thumb = $(this).data('eventObject');
+                            return $(thumbGenerator(thumb.uri, thumb.title, 1));
+                        }
+                    });
+                    $(ulRowfluid).append(node);
+                    var eventObject = {
+                        title: thumb.capt,
+                        uri: thumb.uri,
+                        nodeSrc: node,
+                        category: category //available: poi, restaurant, hotel, shopping
+                    };
+
+                    // store the Event Object in the DOM element so we can get to it later
+                    node.data('eventObject', eventObject);
+                    // thumbContainer.append(node);
+                });
+
+                $(container).append(ulRowfluid);
+            };
 
         generateContentCarousel();
-        generateContentBar("friends");
-        generateContentBar("all")
-        slider(slideroptions);
+        generateContentBar('friends');
+        generateContentBar('all');
+
+        generateContentBarTwo('hotel', 'hotel');
+        generateContentBarTwo('restaurant', 'restaurant');
+        generateContentBarTwo('shopping', 'shopping');
+        var sliderOne = slider(slideroptions);
+
+
+        var slideroptionsTwo = {
+            position: 'bottom',
+            headerSize: '40px',
+            contentSize: '200px',
+            content: {
+                hotel: $('#hotel'),
+                restaurant: $('#restaurant'),
+                shopping: $('#shopping'),
+            },
+            speed: 'fast',
+            visible: false
+        };
+        var sliderTwo = slider(slideroptionsTwo);
+        $('a.right.carousel-control').click(function () {
+            sliderOne.hideAll();
+            sliderTwo.showAll();
+            setTimeout(function () {
+                $('.fc-button-agendaWeek').click();
+            }, 800);
+        });
+        $('a.left.carousel-control').click(function () {
+            sliderOne.showAll();
+            sliderTwo.hideAll();
+        });
         addRemove(mycontent);
 
 

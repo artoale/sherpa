@@ -13,10 +13,9 @@ define(['jquery'], function ($) {
         backgroundColorHeader: '#fff',
         backgroundColorBar: '#eee',
         opacity: 0.8,
-        speed: 'fast'
-    },
-
-        opt;
+        speed: 'fast',
+        visible: true
+    };
     var generateHeaderContent = function (optcontent) {
             var content = document.createElement('div');
             var array = Object.keys(optcontent);
@@ -30,11 +29,11 @@ define(['jquery'], function ($) {
         };
     var generateCloseIcon = function () {
             var content = document.createElement('div');
-            content.id = "closebar";
+            content.id = 'closebar';
 
             content.innerHTML = '&lsaquo;';
             $(content).css({
-                position: "absolute",
+                position: 'absolute',
                 top: '10px',
                 right: '25px',
                 'font-size': '40px',
@@ -46,20 +45,30 @@ define(['jquery'], function ($) {
 
         };
     var create = function (options) {
-            opt = $.extend(true, {}, defaults, options);
+            var opt = $.extend(true, {}, defaults, options);
             var sliderHeight = parseInt(opt.headerSize, 10) + parseInt(opt.contentSize, 10);
             var slider = document.createElement('div');
             var header = document.createElement('div');
             var content = document.createElement('div');
             var bottomBar = document.createElement('div');
             var visible = true;
-            slider.id = "slider" ;
-            content.id = "contentBar";
+            slider.id = 'slider';
+            content.id = 'contentBar';
             $(header).addClass('row-fluid');
+            var hideAll = function () {
+                    $(slider).css({
+                        display: 'none',
+                    });
+                };
+            var showAll = function () {
+                    $(slider).css({
+                        display: 'block',
+                    });
+                };
             var doHide = function () {
                     $(slider).animate({
                         height: opt.headerSize,
-                        backgroundColor: "white",
+                        backgroundColor: 'white',
                         opacity: opt.opacity
                     }, opt.speed);
                     visible = false;
@@ -68,12 +77,12 @@ define(['jquery'], function ($) {
                     $(slider).animate({
                         height: sliderHeight,
 
-                       
-                    }, opt.speed,function(){
+
+                    }, opt.speed, function () {
 
                         $(slider).css({
-                        backgroundColor : opt.backgroundColorBar,
-                        opacity: 1   
+                            backgroundColor: opt.backgroundColorBar,
+                            opacity: 1
                         });
                     });
                     visible = true;
@@ -84,8 +93,7 @@ define(['jquery'], function ($) {
                 bottom: '0',
                 height: sliderHeight,
                 textAlign: 'center',
-                backgroundColor: "white",
-                //background: 'rgba(F, F, F, 0.6)',
+                backgroundColor: 'white',
                 opacity: opt.opacity,
                 zIndex: 1000
             });
@@ -109,31 +117,32 @@ define(['jquery'], function ($) {
 
 
             header.addEventListener('click', function (event) {
-                if(visible) {
-
+                if (visible) {
                     $(content).fadeOut('fast', function () {
-                        $(opt.content).each(function(key,el){
-                            opt.content[key] = $("#"+key);
+                        $(opt.content).each(function (key) {
+                            if ($('#' + key).size()) {
+                                opt.content[key] = $('#' + key);
+                            }
 
                         });
-                        $(content).empty();
-                        if($(event.target).is("#closebar")) {
+                        $(content).children().detach();//innerHTML = '';
+                        if ($(event.target).is('#closebar')) {
                             doHide();
                             $('#closebar').hide();
-                        } else if($(event.target).hasClass("tooglable")) {
+                        } else if ($(event.target).hasClass('tooglable')) {
                             $(content).append(opt.content[event.target.innerHTML]);
                             $(slider).append($(content));
-                            $(content).fadeIn("fast");
+                            $(content).fadeIn('fast');
                             opt.content[event.target.innerHTML].show();
                             $('#closebar').show();
                         }
                     });
                 } else {
-                    $(opt.content).each(function(key,el){
-                            opt.content[key] = $("#"+key);
+                    $(opt.content).each(function (key) {
+                        opt.content[key] = $('#' + key);
 
-                        });
-                    if($(event.target).hasClass("tooglable")) {
+                    });
+                    if ($(event.target).hasClass('tooglable')) {
                         $(content).append(opt.content[event.target.innerHTML]);
                         $(slider).append($(content));
                         $(content).show();
@@ -150,10 +159,14 @@ define(['jquery'], function ($) {
             $('body').append(slider, bottomBar);
             doHide();
             $('#closebar').hide();
-
+            if (!opt.visible) {
+                hideAll();
+            }
             return {
                 hide: doHide,
-                show: doShow
+                show: doShow,
+                hideAll: hideAll,
+                showAll: showAll
             };
         };
 
