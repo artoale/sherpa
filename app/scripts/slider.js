@@ -115,7 +115,7 @@ define(['jquery'], function ($) {
                         $(opt.content).each(function(key,el){
                             opt.content[key] = $("#"+key);
 
-                        })
+                        });
                         $(content).empty();
                         if($(event.target).is("#closebar")) {
                             doHide();
@@ -129,6 +129,10 @@ define(['jquery'], function ($) {
                         }
                     });
                 } else {
+                    $(opt.content).each(function(key,el){
+                            opt.content[key] = $("#"+key);
+
+                        });
                     if($(event.target).hasClass("tooglable")) {
                         $(content).append(opt.content[event.target.innerHTML]);
                         $(slider).append($(content));

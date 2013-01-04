@@ -8,7 +8,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         capt: 'London',
         uri: 'london.jpeg'
     }, {
-        capt: 'New York',
+        capt: 'NewYork',
         uri: 'newyork.jpeg'
     }, {
         capt: 'Milano',
@@ -20,7 +20,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         capt: 'London',
         uri: 'london.jpeg'
     }, {
-        capt: 'New York',
+        capt: 'NewYork',
         uri: 'newyork.jpeg'
     }, {
         capt: 'Milano',
