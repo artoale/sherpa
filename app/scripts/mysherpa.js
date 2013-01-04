@@ -25,6 +25,12 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
     }, {
         capt: 'Milano',
         uri: 'images/thumb/milano.jpeg'
+    },{
+        capt: 'Salvador',
+        uri: 'images/Brazil_Alice/salvador.jpg'
+    },{
+        capt: 'sao-paolo',
+        uri: 'images/Brazil_Alice/sao-paolo.jpg'
     }];
 
        var friendsArray = [{
