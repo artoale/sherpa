@@ -178,10 +178,10 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
 
         //fetch trip infos
         trip.load();
-        triplen = trip.length;
+        triplen = trip.length || 15;
         length += triplen + ' ';
         length += triplen > 1 ? 'days' : 'day';
-
+        trip.destination =  trip.destination || 'France';
         $('#destination').html(trip.destination);
 
         $('#length').html(length);
@@ -271,6 +271,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         $('a.right.carousel-control').click(function () {
             sliderOne.hideAll();
             sliderTwo.showAll();
+            thumbContainer.empty();
             $('#calendar').fullCalendar(options);
             setTimeout(function () {
                 $('.fc-button-agendaWeek').click();
