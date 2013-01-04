@@ -55,7 +55,7 @@ define(['mapTest', 'ratingsys', 'infoTravel', 'places_images_generator', 'commen
 	var hotels = elem.getHotels();
 	if (hotels) {
 		hotels.forEach(function (el) {
-			el.uri = travel + '/' + el.uri;
+			el.uri = 'images/'+travel + '/' + el.uri;
 		});
 		generateContentBar("hotels",hotels);
 	}
