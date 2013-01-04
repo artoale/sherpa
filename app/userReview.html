@@ -35,24 +35,34 @@
         </div>
     </nav>
 
-    <aside class='aside_general_bar'>
-        Here there should be a list of similar related trips/place
-    </aside>
-    <article class='container'>
+    <article class='travelreview container'>
         <div class='row'>
-    <section id='trip_infos' class='span9 trip_infos'>
-        <article id='text_infos' class='text_infos'>
-            <header id='header_traveller' class='header_traveller'>
-            </header>
-            <section id='user_details' class='user_details'>
-                
+            <section class='aside_general_bar span2'>
+                Here there should be a list of similar related trips/place
             </section>
-        </article>
-        <aside id='static_map_container' class='span3'>
-            <div id='mapcanvas'></div>
-        </aside>
-        <article id='travel_list' class='span9'>
-        </article>
+            <section id='main_page' class='span10 main_page'>
+                <div class='row'>
+                    <article id='text_infos' class='text_infos span5'>
+                        <section id='header_traveller' class='travel_title'>
+                        </section>
+                        <section id='trip_details' class='trip_details'>
+                            <div id='trip_author'>
+                            </div>
+                        </section>
+                        <div id='trip_description'  class='trip_details_entry'>
+                        </div>
+                    </article>
+                    <aside id='static_map_container' class='span5'>
+                        <div id='mapcanvas'></div>
+                    </aside>
+                </div>
+                <div class="row">
+                    <div id='topper_travels'>
+                    </div>
+                    <article id='travel_list' class='comments span10'>
+                    </article>
+                </div>
+        </div>
     </article>
 
         <!--[if lt IE 7]>

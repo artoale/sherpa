@@ -72,6 +72,9 @@ function getData() {
 	}, {
 		user: 'Alice',
 		userImage: 'AlicePhoto.jpg',
+		userDescription: 'Hi, I\'m a 26 year old girl who loves to travel. I like good food and old cities. My secret dream is to go in Czech Republic, still never went there!',
+		userPageTitle: 'Alice\'s Wonderful World',
+		homeTown: 'New York, USA',
 		travels: [{
 			title: 'Alice in WonderLand',
 			location: 'Italy',
@@ -111,12 +114,14 @@ function getData() {
 			}]
 
 		}, {
+			title: 'Eu sou brasileiro',
 			location: 'Brazil',
 			fromDate: new Date(2010, 11, 5),
 			toDate: new Date(2010, 11, 25),
 			places: ['Rio De Janeiro, Brazil'],
 			startLocation: 'Sao Paulo, Brazil',
 			endLocation: 'Salvador, Brazil',
+			description: 'This is an amazing place! Nice people, good food, nature but also crowded cities where you never want to go to bed!\nI really enjoyed Salvador De Bahia, suggested to everybody!',
 			pictures: [{
 				capt: 'Landscape, Sao Paulo, Brazil',
 				uri: 'sao-paolo.jpg'
@@ -126,6 +131,17 @@ function getData() {
 			}, {
 				capt: 'Pelourinho District, Salvador, Brazil',
 				uri: 'salvador.jpg'
+			}],
+			hotels: [{
+				capt: 'Rio Della Plata, Rio De Janeiro',
+				uri: 'rio_de_la_plata_rio.jpg'
+			}, {
+				capt: 'Imagem Hotel, Salvador',
+				uri: 'imagem_salvador.jpg'
+			}],
+			restaurants: [{
+				capt: 'La Pupuseria, Salvador',
+				uri: 'pupuseria_salvador.jpg'
 			}]
 		}]
 	}];
@@ -188,6 +204,16 @@ function getData() {
 		},
 		getSingleTravel: function (num, numTrav) {
 			return datas[num].getTravel(numTrav);
+		},
+		getDescription: function (num) {
+			return datas[num].userDescription;
+		},
+		getUserPageTitle: function (num) {
+			return datas[num].userPageTitle;
+		},
+		getHomeTown: function (num) {
+			return datas[num].homeTown;
 		}
+
 	};
 }

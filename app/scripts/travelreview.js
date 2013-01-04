@@ -1,13 +1,17 @@
 
 define(['mapTest', 'ratingsys', 'infoTravel', 'places_images_generator', 'comment_writer', 'slider', 'jquery','generate_bar_thumb', 'eventManager', 'vendor/highslide', 'database'], 
 	function (mapTest, ratingsys, infoTravel, places_images_generator, writeComment, slider, $,generateBarThumb) {
-	var num = 3;
-	var numTrav=0;
-	setDynamicMap(num);
+	var num=3;
+
+	var parser=document.createElement('a');
+	parser.href=window.location.href;
+	alert(req(window.location.href));
+	var numTrav=1;
+	setDynamicMap(num,numTrav);
 	setRatingSystem();
-	generateImagesThumbnails(num);
+	generateImagesThumbnails(num,numTrav);
 	getInformationTravel(num,numTrav);
-	generateBarThumbnails(num);
+	generateBarThumbnails(num, numTrav);
 	var mycontent = {};
 	Object.defineProperties(mycontent, {
 		'hotels': {

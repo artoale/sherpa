@@ -1,11 +1,11 @@
 /*jslint browser:true */
 
-function generateImagesThumbnails(num) {
+function generateImagesThumbnails(num,numTrav) {
 	'use strict';
 	var gen = getData();
-	var elem = gen.getSingleTravel(num, 0);
+	var elem = gen.getSingleTravel(num, numTrav);
 	var thumbs = elem.getPictures();
-	var travel = elem.getLocation(0) + '_' + gen.getUser(num);
+	var travel = elem.getLocation() + '_' + gen.getUser(num);
 	var parent = document.getElementById('trip_info_places');
 	thumbs.forEach(function (thumb) {
 		var anc = document.createElement('a');

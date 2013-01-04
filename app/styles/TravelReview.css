@@ -8,13 +8,6 @@ article.container.travelreview {
 	text-align: left;
 }
 
-.trip_info_places {
-	margin-top: 20px;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-}
-
 .comments {
 	margin-top: 30px;
 }
@@ -60,6 +53,7 @@ article.container.travelreview {
 	font-size: 36px;
 	margin-left: 30px;
 	margin-top: 5px;
+	line-height: 110%;
 }
 .travel_title:first-letter {
 	font-size: 48px;
@@ -94,7 +88,8 @@ img.profile_photo_small{
 }
 
 img.thumb_travel {
-	width: 50px; height: 50px;
+	width: 135px; 
+	height: 135px;
 	border:1px solid black; 
 }
 
@@ -108,4 +103,19 @@ img.thumb_travel {
 
 #shopping {
 	display: none;
+}
+
+#sidebar #social {
+    margin: 10px;
+} 
+#social {
+	margin-top: 10px;
+}   
+div .plusone, .twitter, .fb-like {
+    font-size: 1px;
+    display: inline-block;
+}
+div .fb_reset {
+    display: inline;
+} 
 }
