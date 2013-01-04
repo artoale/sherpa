@@ -13,6 +13,18 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
     }, {
         capt: 'Milano',
         uri: 'milano.jpeg'
+    },{
+        capt: 'Paris',
+        uri: 'paris.jpeg'
+    }, {
+        capt: 'London',
+        uri: 'london.jpeg'
+    }, {
+        capt: 'New York',
+        uri: 'newyork.jpeg'
+    }, {
+        capt: 'Milano',
+        uri: 'milano.jpeg'
     }];
     $(function() {
 
@@ -37,16 +49,14 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         var slideroptions = {
             column: ['Hotel', 'Restaurant', 'Shopping'],
             position: 'bottom',
-            headerSize: '50px',
-            contentSize: '135px',
+            headerSize: '40px',
+            contentSize: '200px',
             content: mycontent,
             headerContent: ['restaurants', 'all', 'deleted'],
-            opacity: 0.7,
             speed: 'fast'
         };
-        slider(slideroptions);
-        addRemove(mycontent);
-        
+
+
         var triplen, length = '',
             counter = 0,
             options = {
@@ -132,6 +142,23 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
             node.data('eventObject', eventObject);
             thumbContainer.append(node);
         });
+
+
+        thumbs.forEach(function(thumb) {
+            var node = $(thumbGenerator(thumb.uri, thumb.capt));
+            var eventObject = {
+                title: thumb.capt,
+                uri: thumb.uri,
+                nodeSrc: node
+            };
+
+            // store the Event Object in the DOM element so we can get to it later
+            node.data('eventObject', eventObject);
+            thumbContainer.append(node);
+        });
+
+
+
         thumbContainer.find('li').draggable({
             revert: 'invalid',
             revertDuration: 0,
@@ -141,6 +168,34 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
                 return $(thumbGenerator(thumb.uri, thumb.title, 1));
             }
         });
+
+        var generateContentCarousel = function(){
+            var container = $("#suggestion > .container"),
+            ulRowfluid = document.createElement('ul');
+            $(ulRowfluid).addClass("listPoiCar");
+            
+            thumbs.forEach(function(thumb,index) {
+             $(ulRowfluid).append(thumbGenerator(thumb.uri, thumb.capt ,2 , "remove" , "btn-danger"));
+            });
+            $(container).append(ulRowfluid);
+        };
+        var generateContentBar = function(selector){
+            var container = $('#'+selector),
+            ulRowfluid = document.createElement('ul');
+            $(ulRowfluid).addClass("listPoiBar");
+            
+            thumbs.forEach(function(thumb,index) {
+             $(ulRowfluid).append(thumbGenerator(thumb.uri, thumb.capt , 2 , "add" , "btn-success"));
+            });
+            $(container).append(ulRowfluid);
+        };
+        generateContentCarousel();
+        generateContentBar("friends");
+        generateContentBar("all")
+        slider(slideroptions);
+        addRemove(mycontent);
+
+
     });
     return 'Hello from mySher!';
 });

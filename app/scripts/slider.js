@@ -12,7 +12,7 @@ define(['jquery'], function ($) {
         headerContent: ['pinco', 'pallo', 'pollo'],
         backgroundColorHeader: '#fff',
         backgroundColorBar: '#eee',
-        opacity: 0.7,
+        opacity: 0.8,
         speed: 'fast'
     },
 
@@ -21,7 +21,7 @@ define(['jquery'], function ($) {
             var content = document.createElement('div');
             var array = Object.keys(optcontent);
             array.forEach(function (element) {
-                $(content).append($('<span class="span4"><div class="uparrow">&lsaquo;</div><div class="tooglable" style ="cursor:pointer">' + element + '</div></span>').css({
+                $(content).append($('<span class="span4" style : "opacity : 1"><div class="uparrow">&lsaquo;</div><div class="tooglable" style ="cursor:pointer">' + element + '</div></span>').css({
                     margin: ''
                 }));
             });
@@ -58,15 +58,23 @@ define(['jquery'], function ($) {
             var doHide = function () {
                     $(slider).animate({
                         height: opt.headerSize,
-                        backgroundColor: "transparent"
+                        backgroundColor: "white",
+                        opacity: opt.opacity
                     }, opt.speed);
                     visible = false;
                 };
             var doShow = function () {
                     $(slider).animate({
                         height: sliderHeight,
-                        backgroundColor: opt.backgroundColorBar
-                    }, opt.speed);
+
+                       
+                    }, opt.speed,function(){
+
+                        $(slider).css({
+                        backgroundColor : opt.backgroundColorBar,
+                        opacity: 1   
+                        });
+                    });
                     visible = true;
                 };
             $(slider).css({
@@ -75,8 +83,9 @@ define(['jquery'], function ($) {
                 bottom: '0',
                 height: sliderHeight,
                 textAlign: 'center',
-                backgroundColor: "transparent",
-                opacity: opt.opaci,
+                backgroundColor: "white",
+                //background: 'rgba(F, F, F, 0.6)',
+                opacity: opt.opacity,
                 zIndex: 1000
             });
             $(header).css({
@@ -84,7 +93,7 @@ define(['jquery'], function ($) {
                 margin: '0',
                 textAlign: 'center',
                 height: opt.headerSize,
-                opacity: opt.opaci,
+                //opacity: 1,
                 zIndex: 1000
             });
             $(bottomBar).css({
