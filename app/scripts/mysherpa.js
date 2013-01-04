@@ -29,7 +29,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         capt: 'Salvador',
         uri: 'images/Brazil_Alice/salvador.jpg'
     }, {
-        capt: 'sao-paolo',
+        capt: 'SPpaolo',
         uri: 'images/Brazil_Alice/sao-paolo.jpg'
     }];
 
