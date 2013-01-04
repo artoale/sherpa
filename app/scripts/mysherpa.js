@@ -3,28 +3,28 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
     'use strict';
     var thumbs = [{
         capt: 'Paris',
-        uri: 'paris.jpeg'
+        uri: 'images/thumb/paris.jpeg'
     }, {
         capt: 'London',
-        uri: 'london.jpeg'
+        uri: 'images/thumb/london.jpeg'
     }, {
         capt: 'NewYork',
-        uri: 'newyork.jpeg'
+        uri: 'images/thumb/newyork.jpeg'
     }, {
         capt: 'Milano',
-        uri: 'milano.jpeg'
+        uri: 'images/thumb/milano.jpeg'
     },{
         capt: 'Paris',
-        uri: 'paris.jpeg'
+        uri: 'images/thumb/paris.jpeg'
     }, {
         capt: 'London',
-        uri: 'london.jpeg'
+        uri: 'images/thumb/london.jpeg'
     }, {
         capt: 'NewYork',
-        uri: 'newyork.jpeg'
+        uri: 'images/thumb/newyork.jpeg'
     }, {
         capt: 'Milano',
-        uri: 'milano.jpeg'
+        uri: 'images/thumb/milano.jpeg'
     }];
     
     $(function () {
@@ -181,7 +181,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
             });
             $(container).append(ulRowfluid);
         };
-        var generateContentBar = function(selector){
+        var generateContentBar = function(selector,vettore){
             var container = $('#'+selector),
             ulRowfluid = document.createElement('ul');
             $(ulRowfluid).addClass("listPoiBar");
@@ -192,6 +192,9 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
             });
             $(container).append(ulRowfluid);
         };
+
+
+
         generateContentCarousel();
         generateContentBar("friends");
         generateContentBar("all")

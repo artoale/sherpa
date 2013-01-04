@@ -1,7 +1,7 @@
 /*global define*/
 define([], function () {
     'use strict';
-    var tpl = '<li class="span[[SIZE]]">' + '<div class="thumbnail">' + '<img src="images/thumb/[[SRC]]" alt="">' + '<p style="margin-top:3px"; class="caption" id="[[CAPTION_NAME]]" >[[CAPTION]][[BUTTON]]</p>' + '</div>' + '</li>';
+    var tpl = '<li class="span[[SIZE]]">' + '<div class="thumbnail">' + '<img src="[[SRC]]" alt="">' + '<p style="margin-top:3px"; class="caption" id="[[CAPTION_NAME]]" >[[CAPTION]][[BUTTON]]</p>' + '</div>' + '</li>';
 
     return function (imgUri, caption, spanSize, textButton, btnType) {
         var newHtml = tpl.replace('[[SRC]]', imgUri);

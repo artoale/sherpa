@@ -15,7 +15,7 @@ define(['jquery','thumbGenerator'], function ($,thumbGenerator) {
 						removeDiv = $(event.target).parents(".thumbnail");
 						var pippo = $(removeDiv).children(".caption")
 						var prova = $(removeDiv).children(".caption").attr("id");
-						var appendDivDel = $(thumbGenerator( $(removeDiv).children("img").attr('src').replace('images/thumb/','') , $(removeDiv).children(".caption").attr("id"),2,"add","btn-success"));
+						var appendDivDel = $(thumbGenerator( $(removeDiv).children("img").attr('src') , $(removeDiv).children(".caption").attr("id"),2,"add","btn-success"));
 						$("#deleted").children('ul').append(appendDivDel);
 						
 						$(removeDiv).parent("li").remove();
@@ -31,7 +31,7 @@ define(['jquery','thumbGenerator'], function ($,thumbGenerator) {
 
 				if ($(event.target).hasClass("btn-success")){
 					removeDivDel = $(event.target).parents(".thumbnail");
-					var appendDivDel = $(thumbGenerator( $(removeDivDel).children("img").attr('src').replace('images/thumb/','') , $(removeDivDel).children(".caption").attr("id"),2,"remove","btn-danger"));
+					var appendDivDel = $(thumbGenerator( $(removeDivDel).children("img").attr('src') , $(removeDivDel).children(".caption").attr("id"),2,"remove","btn-danger"));
 					$(".listPoiCar").append(appendDivDel);
 					$(removeDivDel).remove();
 
