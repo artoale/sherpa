@@ -62,14 +62,14 @@ define(['mapTest', 'ratingsys', 'infoTravel', 'places_images_generator', 'commen
 	restaurants = elem.getRestaurants();
 	if (restaurants) {
 		restaurants.forEach(function (el) {
-			el.uri = travel + '/' + el.uri;
+			el.uri = 'images/'+travel + '/' + el.uri;
 		});
 		generateContentBar("restaurants",restaurants);
 	}
 	shopping = elem.getShopping();
 	if (shopping) {
 		shopping.forEach(function (el) {
-			el.uri = travel + '/' + el.uri;
+			el.uri = 'images/'+travel + '/' + el.uri;
 		});
 		generateContentBar("shopping",shopping);
 	}
