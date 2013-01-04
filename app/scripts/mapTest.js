@@ -56,13 +56,14 @@ function setStaticMap(num) {
 	document.getElementById('mapcanvas').style.height = '350px';
 	document.getElementById('mapcanvas').style.width = '100%';
 	var d=getData();
+	container.innerHTML='<figcaption><h5>'+d.getUser(num) +' visited these places!</h5></figcaption>';
 	var elem = d.getAllTravels(num);
 	var im = document.createElement('img');
 	var st = 'http://maps.googleapis.com/maps/api/staticmap?markers=color:blue|size:small';
 	elem.forEach(function (el) {
 		st = st + '|' + el.getLocation();
 	});
-	st = st + '&zoom=0&center='+d.getHomeTown(num) +'&size=380x350&sensor=false';
+	st = st + '&zoom=0&center='+d.getHomeTown(num) +'&size=380x240&sensor=false';
 	im.setAttribute('src', st);
 	im.setAttribute('alt', ' ');
 	container.appendChild(im);

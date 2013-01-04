@@ -46,40 +46,46 @@
             </ul>
         </div>
     </nav>
-    <aside id='leftAside'>
-        <ul id="mycarousel" class="jcarousel jcarousel-skin-tango">
-            <li>
-                <img src="http://static.flickr.com/66/199481236_dc98b5abb3_s.jpg" width="75" height="75" alt="" />
-                <p>pinco pallo</p>
-            </li>
-            <li><img src="http://static.flickr.com/75/199481072_b4a0d09597_s.jpg" width="75" height="75" alt="" /></li>
-            <li><img src="http://static.flickr.com/57/199481087_33ae73a8de_s.jpg" width="75" height="75" alt="" /></li>
-            <li><img src="http://static.flickr.com/77/199481108_4359e6b971_s.jpg" width="75" height="75" alt="" /></li>
-            <li><img src="http://static.flickr.com/58/199481143_3c148d9dd3_s.jpg" width="75" height="75" alt="" /></li>
-            <li><img src="http://static.flickr.com/72/199481203_ad4cdcf109_s.jpg" width="75" height="75" alt="" /></li>
-            <li><img src="http://static.flickr.com/58/199481218_264ce20da0_s.jpg" width="75" height="75" alt="" /></li>
-            <li><img src="http://static.flickr.com/69/199481255_fdfe885f87_s.jpg" width="75" height="75" alt="" /></li>
-            <li><img src="http://static.flickr.com/60/199480111_87d4cb3e38_s.jpg" width="75" height="75" alt="" /></li>
-            <li><img src="http://static.flickr.com/70/229228324_08223b70fa_s.jpg" width="75" height="75" alt="" /></li>
-        </ul>
-    </aside>
-    <section class="mysherpa container">
-        <div class="row">
-            <section class="span6" id='a'>
-                <div id="content" scrollpagination="enabled">
-                    <div class="post" id='p'>
-                        <h1>title</h1>
-                        <img width="90" height="55" src="images/star_on.gif" alt="" title=""/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas veniam facilis architecto blanditiis odio ullam mollitia explicabo soluta animi ea quae adipisci consequuntur beatae maxime illo vitae optio reiciendis perferendis.
-                        </p> 
-                        <a href="#">Some link</a>
-                    </div>
-
+    <article class='streamreview container'>
+        <div class='row'>
+            <aside id='leftAside' class='aside_general_bar span2'>
+                    <ul id="mycarousel" class="jcarousel jcarousel-skin-tango unstyled">
+                        <li class='carousel_element'><img src="images/thumb_barra/plaza_de_toros_madrid.jpg" width="75" height="75" alt="" /><br>Plaza De Toros,<br>Madrid,<br>Spain</li>
+                        <li class='carousel_element'><img src="images/thumb_barra/angkor_wat.jpg" width="75" height="75" alt="" />
+                            <br>Angkor Wat,<br>Angkor,<br>Cambodia</li>
+                        <li class='carousel_element'><img src="images/thumb_barra/beijing.jpg" width="75" height="75" alt="" />
+                            <br>Forbidden City,<br>Beijing<br>China</li>
+                        <li class='carousel_element'><img src="images/thumb_barra/big_ben.jpg" width="75" height="75" alt="" />
+                            <br>Big Ben,<br>London,<br>UK</li>
+                        <li class='carousel_element'><img src="images/thumb_barra/chengdu.jpg" width="75" height="75" alt="" /><br>Pandas,<br>Chengdu,<br>China</li>
+                        <li class='carousel_element'><img src="images/thumb_barra/coliseum.jpg" width="75" height="75" alt="" /><br>Coliseum,<br>Rome,<br>Italy</li>
+                        <li class='carousel_element'><img src="images/thumb_barra/nanjing.jpg" width="75" height="75" alt="" /><br>Nanjing channels,<br>Nanjing,<br>China</li>
+                        <li class='carousel_element'><img src="images/thumb_barra/niagara_falls.jpg" width="75" height="75" alt="" /><br>Niagara Falls,<br>Niagara,<br>USA</li>
+                        <li class='carousel_element'><img src="images/thumb_barra/paris.jpg" width="75" height="75" alt="" /><br>Tour Eiffel,<br>Paris,<br>France</li>
+                        <li class='carousel_element'><img src="images/thumb_barra/piramidi_sfinge.jpg" width="75" height="75" alt="" /><br>Pyramids,<br>Luxor,<br>Egypt</li>
+                        <li class='carousel_element'><img src="images/thumb_barra/shanghai.jpg" width="75" height="75" alt="" /><br>Landscape,<br>Shanghai,<br>China</li>
+                        <li class='carousel_element'><img src="images/thumb_barra/taj_mahal.jpg" width="75" height="75" alt="" /><br>Taj Mahal,<br>Agra,<br>India</li>
+                    </ul>
+            </aside>
+            <section id='main_page' class='span10 main_page'>
+                <div class='row'>
+                    <section class="span6" id='a'>
+                        <div id="content" scrollpagination="enabled">
+                            <div class="post" id='p'>
+                                <h1>Alice</h1>
+                                <img class="profile_photo_big" src="images/AlicePhoto.jpg" alt="" title=""/>
+                                <p>I just come back from Italy, look at my Travel!</p> 
+                                <a href="TravelReview.html?user=3&trav=0"> <button class='btn btn-info' style='margin-top:20px' type='button'>Check it out!</button></a>
+                            </div>
+                        </div>
+                        <div class="loading" id="loading">
+                            Scroll down to load other posts
+                        </div>
+                    </section>
                 </div>
-                <div class="loading" id="loading">Scroll down to load other posts</div>
             </section>
-        </div>
-    </section>
+        </article>
+    </div>
 
 
         <!--[if lt IE 7]>

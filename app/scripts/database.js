@@ -2,13 +2,18 @@ function getData() {
 	var datas = [{
 		user: 'Alex',
 		userImage: 'AlexPhoto.jpg',
+		userDescription: 'My name is Alex, I\'m 22 and I love Europe! Unfortunately I\'m a bit far away, but I\'m looking for to go there whenever I can!',
+		userPageTitle: 'Europe mon amour!',
+		homeTown: 'Hanoi, Vietnam',
 		travels: [{
+			title: 'C\'est la France!',
 			location: 'France',
 			fromDate: new Date(2011, 10, 10),
 			toDate: new Date(2011, 10, 22),
 			places: ['Marseille, France', 'Bordeaux, France', 'Paris, France'],
 			startLocation: 'Nice, France',
 			endLocation: 'Nice, France',
+			description: 'C\'est la marveille! I loved France, the cities, the people, the food (especially the wine!). From north to south, everything is a discovery day by day!',
 			pictures: [{
 				capt: 'Landscape, Nice, France',
 				uri: 'nice.jpg'
@@ -41,10 +46,53 @@ function getData() {
 	}, {
 		user: 'Eve',
 		userImage: 'EvePhoto.jpg',
-		travels: []
+		userDescription: 'Bonjour à tout le monde! My name is Eve, I am a young girl from Bordeaux, France, and I love Africa! I travel a lot with my family and, if I can afford it, with a couple of friends!',
+		userPageTitle: 'Le fabuleux destin d\'Eve',
+		homeTown: 'Bordeaux, France',
+		travels: [{
+			title: 'It\'s Pyramid time!',
+			location: 'Egypt',
+			fromDate: new Date(2009, 10, 1),
+			toDate: new Date(2011, 10, 14),
+			places: ['Alexandria, Egypt', 'Suez, Egypt', 'Luxor, Egypt', 'Aswan, Egypt'],
+			startLocation: 'Cairo, Egypt',
+			endLocation: 'Cairo, Egypt',
+			description: 'Egypt is such a mysterious and fascinating country! Under the shadow of the pyramids you can really feel the atmosphere from four thousand years ago! ',
+			pictures: [{
+				capt: 'University of Cairo',
+				uri: 'university_cairo.jpg'
+			}, {
+				capt: 'The Pyramids!',
+				uri: 'piramidi_sfinge.jpg'
+			}, {
+				capt: 'Fort of Alexandria',
+				uri: 'Alexandria.jpg'
+			}, {
+				capt: 'Temple Of Karanak in Luxor',
+				uri: 'karnak-temple_luxor.jpg'
+			}, {
+				capt: 'Fascinating!',
+				uri: 'Abu_Simbel.jpg'
+			}],
+			hotels: [{
+				capt: 'Marriott Hotel, Cairo',
+				uri: 'marriott.jpg'
+			}, {
+				capt: 'sonesta, Luxor',
+				uri: 'sonesta.jpg'
+			}],
+			restaurants: [{
+				capt: 'Flamenco, Cairo',
+				uri: 'flamenco.jpg'
+			}]
+		}]
 	}, {
 		user: 'Bob',
 		userImage: 'BobPhoto.jpg',
+		userDescription: 'I\'m an american guy who has what somebody calls "East Disease". I mean, I need to go to Far East whenever I can, I love its atmosphere and the different cultures! Contact me if you want to go there!',
+		userPageTitle: 'Asia is my World',
+		homeTown: 'Los Angelese, USA',
+
 		travels: [{
 			location: 'China',
 			fromDate: new Date(2012, 4, 15),
@@ -52,21 +100,44 @@ function getData() {
 			places: ['Xian, China', 'Chengdu, China', 'Nanjing, China'],
 			startLocation: 'Beijing, China',
 			endLocation: 'Shanghai, China',
+			title: 'A bit of China',
+			description: 'this have been a random trip. I wanted to go to Korea, but at the very last minute I changed my mind and went to Beijing. From there, I made a very quick tour of the principal cities, in order to know something about everything. I\'m planning to repeate this trip with more days, contact me!',
 			pictures: [{
-				capt: 'View of the Forbidden City Entrance, Beijing, China',
+				capt: 'View of the Forbidden City Entrance, Beijing',
 				uri: 'beijing.jpg'
 			}, {
-				capt: 'Landscape, Shanghai, China',
+				capt: 'Landscape of Shanghai',
 				uri: 'shanghai.jpg'
 			}, {
-				capt: 'Terracotta Army, Xian, China',
+				capt: 'Terracotta Army',
 				uri: 'xian.jpg'
 			}, {
-				capt: 'Pandas in the Sichuan Reserve, Chengdu, China',
+				capt: 'Pandas are Cute!',
 				uri: 'chengdu.jpg'
 			}, {
-				capt: 'View of the Canals, Nanjing, China',
+				capt: 'View of the Canals, Nanjing',
 				uri: 'nanjing.jpg'
+			}],
+			hotels: [{
+				capt: 'Brian Hotel, Beijing',
+				uri: 'brian.jpg'
+			}, {
+				capt: 'Sheraton Hotel, Shanghai',
+				uri: 'sheraton.jpg'
+			}],
+			restaurants: [{
+				capt: 'Mifan, Shanghai',
+				uri: 'table.jpg'
+			},{
+				capt: 'Baiju, Shanghai',
+				uri: 'baiju.jpg'
+			}],
+			shopping: [{
+				capt: 'Shinlu Road, Chengdu',
+				uri: 'shinlu.jpg'
+			}, {
+				capt: 'Old City, Shanghai',
+				uri: 'old.jpg'
 			}]
 		}]
 	}, {
