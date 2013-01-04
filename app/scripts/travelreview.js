@@ -1,6 +1,6 @@
 define(['mapTest', 'ratingsys', 'infoTravel', 'places_images_generator', 'comment_writer', 'slider', 'jquery', 'generate_bar_thumb', 'jquery.jcarousel.min', 'thumbGenerator','eventManager', 'vendor/highslide', 'database'], function (mapTest, ratingsys, infoTravel, places_images_generator, writeComment, slider, $, generateBarThumb, jCarousel,thumbGenerator) {
-	var num = 3;
-	var numTrav = 1;
+	var num = 2;
+	var numTrav = 0;
 
 	var match = window.location.href.match(/\?user=(\d)/);
 	var match2 = window.location.href.match(/trav=(\d)/);
