@@ -13,7 +13,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
     }, {
         capt: 'Milano',
         uri: 'milano.jpeg'
-    },{
+    }, {
         capt: 'Paris',
         uri: 'paris.jpeg'
     }, {
@@ -26,7 +26,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         capt: 'Milano',
         uri: 'milano.jpeg'
     }];
-    
+
     $(function () {
 
         var mycontent = {};
@@ -115,12 +115,12 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
             },
 
             thumbContainer = $('ul.thumbnails'),
-            viewH = $(window).height();
-
+            viewH = window.innerHeight;
         $('ul.thumbnails').css({
-            height: viewH - 100,
-            overflow: 'scroll'
+            height: viewH - 120,
+            overflowY: 'scroll'
         });
+
         //fetch trip infos
         trip.load();
         triplen = trip.length;
@@ -145,7 +145,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         });
 
 
-        thumbs.forEach(function(thumb) {
+        thumbs.forEach(function (thumb) {
             var node = $(thumbGenerator(thumb.uri, thumb.capt));
             var eventObject = {
                 title: thumb.capt,
@@ -170,26 +170,27 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
             }
         });
 
-        var generateContentCarousel = function(){
-            var container = $("#suggestion > .container"),
-            ulRowfluid = document.createElement('ul');
-            $(ulRowfluid).addClass("listPoiCar");
-            
-            thumbs.forEach(function(thumb,index) {
-             $(ulRowfluid).append(thumbGenerator(thumb.uri, thumb.capt ,2 , "remove" , "btn-danger"));
-            });
-            $(container).append(ulRowfluid);
-        };
-        var generateContentBar = function(selector){
-            var container = $('#'+selector),
-            ulRowfluid = document.createElement('ul');
-            $(ulRowfluid).addClass("listPoiBar");
-            
-            thumbs.forEach(function(thumb,index) {
-             $(ulRowfluid).append(thumbGenerator(thumb.uri, thumb.capt , 2 , "add" , "btn-success"));
-            });
-            $(container).append(ulRowfluid);
-        };
+        var generateContentCarousel = function () {
+                var container = $("#suggestion > .container"),
+                    ulRowfluid = document.createElement('ul');
+                $(ulRowfluid).addClass("listPoiCar");
+
+                thumbs.forEach(function (thumb, index) {
+                    $(ulRowfluid).append(thumbGenerator(thumb.uri, thumb.capt, 2, "remove", "btn-danger"));
+                });
+                $(container).append(ulRowfluid);
+            };
+        var generateContentBar = function (selector) {
+                var container = $('#' + selector),
+                    ulRowfluid = document.createElement('ul');
+                $(ulRowfluid).addClass("listPoiBar");
+
+                thumbs.forEach(function (thumb, index) {
+                    $(ulRowfluid).append(thumbGenerator(thumb.uri, thumb.capt, 2, "add", "btn-success"));
+                });
+                $(container).append(ulRowfluid);
+            };
+
         generateContentCarousel();
         generateContentBar("friends");
         generateContentBar("all")
