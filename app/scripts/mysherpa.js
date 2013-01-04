@@ -174,6 +174,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
             var container = $("#suggestion > .container"),
             ulRowfluid = document.createElement('ul');
             $(ulRowfluid).addClass("listPoiCar");
+            $(ulRowfluid).addClass("unstyled");
             
             thumbs.forEach(function(thumb,index) {
              $(ulRowfluid).append(thumbGenerator(thumb.uri, thumb.capt ,2 , "remove" , "btn-danger"));
@@ -184,6 +185,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
             var container = $('#'+selector),
             ulRowfluid = document.createElement('ul');
             $(ulRowfluid).addClass("listPoiBar");
+            $(ulRowfluid).addClass("unstyled");
             
             thumbs.forEach(function(thumb,index) {
              $(ulRowfluid).append(thumbGenerator(thumb.uri, thumb.capt , 2 , "add" , "btn-success"));
