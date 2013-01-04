@@ -269,6 +269,10 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         };
         var sliderTwo = slider(slideroptionsTwo);
         $('a.right.carousel-control').click(function () {
+            $(this).css({
+                display: 'none'
+            });
+            $('.carousel-control-description').html('Save your trip!');
             sliderOne.hideAll();
             sliderTwo.showAll();
             thumbContainer.empty();
@@ -316,8 +320,13 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         });
         $('a.left.carousel-control').click(function () {
             $('#calendar').fullCalendar('destroy');
+            $('carousel-control-description').html('Save!');
             sliderOne.showAll();
             sliderTwo.hideAll();
+            $('.carousel-control-description').html('Prepare your<br>Schedule');
+            $('a.right.carousel-control').css({
+                display: 'block'
+            });
         });
 
         
