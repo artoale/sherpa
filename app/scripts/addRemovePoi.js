@@ -24,23 +24,29 @@ define(['jquery'], function($) {
 
 
 	var removeAddFunction = function() {
-			var closeButton, allChildren, randomChild, appendDivCar, removeDiv, appendDivDel,targetListener;
+			var closeButton, allChildren, randomChild, appendDivCar, removeDiv, appendDivDel, targetListener;
 			targetListener = $("#suggestion");
 			targetListener.on('click', function(event) {
 				// body...
-				//viene eliminato l'elemento selezionato e aggiunto ai deleted
-				if ($(event.target).hasClass('removePoi') ){ 
-				removeDiv = $(event.target).parent();
-				appendDivDel = fromCarouselToBar(removeDiv);
-				removeDiv.empty();
-				$("#deleted").append($(appendDivDel));
-
-				//scelgo uno casuale da all da aggiungere al posto di quello eliminato
 				allChildren = $("#all").children();
-				randomChild = allChildren[Math.floor(Math.random() * allChildren.length)];
-				frombarlToCarouselWithAppend(removeDiv, randomChild);
-				$(randomChild).remove();
-			}
+
+				//viene eliminato l'elemento selezionato e aggiunto ai deleted
+				if($(event.target).hasClass('removePoi')) {
+					if(allChildren.length > 0) {
+						removeDiv = $(event.target).parent();
+						appendDivDel = fromCarouselToBar(removeDiv);
+						removeDiv.empty();
+						$("#deleted").append($(appendDivDel));
+
+						//scelgo uno casuale da all da aggiungere al posto di quello eliminato
+						randomChild = allChildren[Math.floor(Math.random() * allChildren.length)];
+						frombarlToCarouselWithAppend(removeDiv, randomChild);
+						$(randomChild).remove();
+					} else {
+						alert("Sherpa has no more knowledge");
+					}
+				}
+
 
 
 			});
