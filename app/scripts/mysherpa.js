@@ -1,5 +1,5 @@
 /*global define*/
-define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider', 'fullcalendar', 'popover','addRemovePoi'], function(trip, $, thumbGenerator, contentGenerator, slider, addRemove) {
+define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider','addRemovePoi' ,'fullcalendar', 'popover'], function(trip, $, thumbGenerator, contentGenerator, slider, addRemove) {
     'use strict';
     var thumbs = [{
         capt: 'Paris',
@@ -20,8 +20,8 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
 
 
         Object.defineProperties(mycontent, {
-            "restaurants": {
-                value: $("#restaurants"),
+            "friends": {
+                value: $("#friends"),
                 enumerable: true
             },
             "all": {
