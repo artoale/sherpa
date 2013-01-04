@@ -69,7 +69,7 @@
             <section id='main_page' class='span10 main_page'>
                 <div class='row'>
                     <section class="span10" id='a'>
-                        <div id="content" scrollpagination="enabled">
+                        <div id="content">
                             <div class="post" id='p'>
                                 <div class='row'>
                                     <div class='span4'>
@@ -94,7 +94,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="loading" id="loading">
+                        <div id="loading">
+                            Loading...
+                        </div>
+                        <div class="scroll" id="other">
                             Scroll down to load other posts
                         </div>
                     </section>
@@ -159,12 +162,6 @@
                     rtl: false,
                     itemFallbackDimension : '100px'
                 });
-            });
-
-            </script>
-            <script type="text/javascript">
-             //init scroll
-             $(document).ready(function(){
                 $('#content').scrollPagination({
                         'contentPage': 'democontent0.html', // the url you are fetching the results
                         'contentData': {},
@@ -179,7 +176,6 @@
                            var i = 0;
                            $(elementsLoaded).fadeInWithDelay();
                              if ($('#content').children().size() > 100){ // if more than 100 results already loaded, then stop pagination (only for testing)
-                                $('#nomoreresults').fadeIn();
                                 $('#content').stopScrollPagination();
                             }
                         }
@@ -195,7 +191,7 @@
                     };
 
                 });
-</script>
+            </script>
 <!-- build:js scripts/amd-app.js -->
 <!-- <script data-main="scripts/mysherpa.js" src="scripts/vendor/require.js"></script>-->
 <!-- endbuild -->

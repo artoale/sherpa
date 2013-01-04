@@ -29,6 +29,8 @@ var loading = false;
 	$.fn.stopScrollPagination = function() {
 		return this.each(function() {
 			$(this).attr('scrollPagination', 'disabled');
+			$('#other').html('No more posts!');
+			$('#other').css("background-color","lightgray");
 		});
 
 	};

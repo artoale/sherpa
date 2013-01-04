@@ -11,12 +11,17 @@ aside.aside_general_bar {
 	height: 500px;
 }
 
-.loading{
+#loading{
+	text-align: center;
+}
+
+.scroll{
 	background-color: lightblue;
 	text-align: center;
 	-webkit-border-radius: 40px;
     -moz-border-radius: 40px;
 	border-radius: 40px;
+	text-decoration: blink;
 }
 
 .carousel_element {
