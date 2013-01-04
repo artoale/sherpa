@@ -48,7 +48,10 @@
     </nav>
     <aside id='leftAside'>
         <ul id="mycarousel" class="jcarousel jcarousel-skin-tango">
-            <li><img src="http://static.flickr.com/66/199481236_dc98b5abb3_s.jpg" width="75" height="75" alt="" /></li>
+            <li>
+                <img src="http://static.flickr.com/66/199481236_dc98b5abb3_s.jpg" width="75" height="75" alt="" />
+                <p>pinco pallo</p>
+            </li>
             <li><img src="http://static.flickr.com/75/199481072_b4a0d09597_s.jpg" width="75" height="75" alt="" /></li>
             <li><img src="http://static.flickr.com/57/199481087_33ae73a8de_s.jpg" width="75" height="75" alt="" /></li>
             <li><img src="http://static.flickr.com/77/199481108_4359e6b971_s.jpg" width="75" height="75" alt="" /></li>
@@ -127,10 +130,11 @@
                     vertical: true,
                     scroll: 1,
                     animation: "slow",
-                    wrap: "last",
+                    wrap: "circular",
                     auto: 2,
                     visible: 3,
-                    rtl: false
+                    rtl: false,
+                    itemFallbackDimension : '100px'
                 });
             });
 

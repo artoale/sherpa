@@ -1,15 +1,5 @@
 #leftAside{
 	float:left;
-	margin: 30px;
-
-}
-
-.container{
-	float:left;
-	margin-left: 30px;
-	width:70%;
-	height: 654px; 
-	overflow: scroll; 
 }
 
 .loading{
@@ -18,4 +8,20 @@
 	-webkit-border-radius: 40px;
     -moz-border-radius: 40px;
 	border-radius: 40px;
+}
+
+.carousel_element {
+	margin-bottom: 10px;
+	text-align: center;
+}
+.top-to-bottom {
+    border-width:3px;
+    -webkit-border-image: 
+    	-webkit-gradient(linear, 0 0, 0 100%, from(black), to(rgba(0, 0, 0, 0))) 1 100%;
+    -webkit-border-image: 
+    	-webkit-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;
+    -o-border-image:
+    	     -o-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;
+    -moz-border-image:
+    	   -moz-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;    
 }

@@ -7,7 +7,9 @@ article.container.travelreview {
 	margin-top: 30px;
 	text-align: left;
 }
-
+aside.aside_general_bar {
+	height: 500px;
+}
 .comments {
 	margin-top: 30px;
 }
@@ -101,6 +103,11 @@ img.thumb_travel {
 	border:1px solid black; 
 }
 
+img.average {
+	width:16px;
+	height:16px;
+}
+
 #hotels {
 	display: none;
 }
@@ -126,4 +133,3 @@ div .plusone, .twitter, .fb-like {
 div .fb_reset {
     display: inline;
 } 
-}

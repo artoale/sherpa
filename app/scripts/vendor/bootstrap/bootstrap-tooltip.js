@@ -23,7 +23,7 @@
 
   "use strict"; // jshint ;_;
 
-
+console.log('loaded tooltip');
  /* TOOLTIP PUBLIC CLASS DEFINITION
   * =============================== */
 
@@ -249,7 +249,7 @@
  /* TOOLTIP PLUGIN DEFINITION
   * ========================= */
 
-  $.fn.tooltip = function ( option ) {
+  $.fn.btooltip = function ( option ) {
     return this.each(function () {
       var $this = $(this)
         , data = $this.data('tooltip')
@@ -259,9 +259,10 @@
     })
   }
 
-  $.fn.tooltip.Constructor = Tooltip
+  $.fn.btooltip.Constructor = Tooltip
 
-  $.fn.tooltip.defaults = {
+console.log('exported Constructor');
+  $.fn.btooltip.defaults = {
     animation: true
   , placement: 'top'
   , selector: false
