@@ -16,7 +16,12 @@ define(['jquery','thumbGenerator'], function ($,thumbGenerator) {
 						var pippo = $(removeDiv).children(".caption")
 						var prova = $(removeDiv).children(".caption").attr("id");
 						var appendDivDel = $(thumbGenerator( $(removeDiv).children("img").attr('src') , $(removeDiv).children(".caption").attr("id"),2,"add","btn-success"));
-						$("#deleted").children('ul').append(appendDivDel);
+						var deletedDiv = $("#deleted"); 
+						if (deletedDiv.size()){
+							$(deletedDiv).children('ul').append(appendDivDel);
+						} else {
+							mycontent.deleted.children('ul').append(appendDivDel);
+						}
 						
 						$(removeDiv).parent("li").remove();
 						
@@ -25,7 +30,7 @@ define(['jquery','thumbGenerator'], function ($,thumbGenerator) {
 
 
 			//listener sugli elementi della barra
-			targetListenerBar = $('#slider');
+			targetListenerBar = $('.slider');
 			targetListenerBar.on('click',function(event){
 				event.preventDefault();
 

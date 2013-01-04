@@ -55,7 +55,7 @@ define(['jquery'], function ($) {
             var content = document.createElement('div');
             var bottomBar = document.createElement('div');
             var visible = true;
-            slider.id = 'slider';
+            $(slider).addClass('slider');
             content.id = 'contentBar';
             $(header).addClass('row-fluid');
             var hideAll = function () {
@@ -121,6 +121,7 @@ define(['jquery'], function ($) {
 
             header.addEventListener('click', function (event) {
 
+                if ($(event.target).hasClass('tooglable')){
                 if (visible) {
                     $(content).fadeOut('fast', function () {
                         $(opt.content).each(function (key) {
@@ -133,7 +134,7 @@ define(['jquery'], function ($) {
                         if ($(event.target).is('#closebar')) {
                             doHide();
                             $('#closebar').hide();
-                        } else if ($(event.target).hasClass('tooglable')) {
+                        } else {
 
                             $(content).append(opt.content[event.target.innerHTML]);
                             $(slider).append($(content));
@@ -147,14 +148,14 @@ define(['jquery'], function ($) {
                         opt.content[key] = $('#' + key);
 
                     });
-                    if ($(event.target).hasClass('tooglable')) {
+                    
                         $(content).append(opt.content[event.target.innerHTML]);
                         $(slider).append($(content));
                         $(content).show();
                         opt.content[event.target.innerHTML].show();
                         $('#closebar').show();
                         doShow();
-                    }
+                    
                 }
             }
             });
@@ -172,7 +173,8 @@ define(['jquery'], function ($) {
                 hide: doHide,
                 show: doShow,
                 hideAll: hideAll,
-                showAll: showAll
+                showAll: showAll,
+                state : opt.content
             };
         };
 

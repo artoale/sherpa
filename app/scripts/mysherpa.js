@@ -149,7 +149,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
                     if (copiedEventObject.category === 'poi') {
                         $(this).appendTo(thumbContainer);
                     } else {
-                        $(this).appendTo($('#' + copiedEventObject.category));
+                        $(this).appendTo($('#' + copiedEventObject.category).find('ul'));
                     }
 
 
@@ -275,13 +275,11 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
 
         generateContentBar("friends",friendsArray);
         generateContentBar("all",allArray)
-        slider(slideroptions);
-
         generateContentBarTwo('hotel', 'hotel');
         generateContentBarTwo('restaurant', 'restaurant');
         generateContentBarTwo('shopping', 'shopping');
         var sliderOne = slider(slideroptions);
-
+        addRemove(sliderOne.state);
 
         var slideroptionsTwo = {
             position: 'bottom',
@@ -307,7 +305,8 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
             sliderOne.showAll();
             sliderTwo.hideAll();
         });
-        addRemove(mycontent);
+
+        
 
 
     });
