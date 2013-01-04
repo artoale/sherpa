@@ -1,5 +1,5 @@
 /*global define*/
-define(['jquery'], function($) {
+define(['jquery'], function ($) {
     'use strict';
 
 
@@ -11,24 +11,24 @@ define(['jquery'], function($) {
         content: {},
         headerContent: ['pinco', 'pallo', 'pollo'],
         backgroundColorHeader: '#fff',
-        backgroundColorBar: '#ddd',
+        backgroundColorBar: '#eee',
         opacity: 0.7,
         speed: 'fast'
     },
 
         opt;
-    var generateHeaderContent = function(optcontent) {
+    var generateHeaderContent = function (optcontent) {
             var content = document.createElement('div');
             var array = Object.keys(optcontent);
-            array.forEach(function(element) {
-            $(content).append($('<span class="span4"><div class="uparrow">&lsaquo;</div><div class="tooglable" style ="cursor:pointer">' + element + '</div></span>').css({   
-                             margin: ''
+            array.forEach(function (element) {
+                $(content).append($('<span class="span4"><div class="uparrow">&lsaquo;</div><div class="tooglable" style ="cursor:pointer">' + element + '</div></span>').css({
+                    margin: ''
                 }));
             });
 
             return content;
         };
-    var generateCloseIcon = function() {
+    var generateCloseIcon = function () {
             var content = document.createElement('div');
             content.id = "closebar";
 
@@ -40,12 +40,12 @@ define(['jquery'], function($) {
                 'font-size': '40px',
                 '-moz-transform': 'rotate(270deg)',
                 '-webkit-transform': 'rotate(270deg)',
-                'cursor':'pointer'
+                'cursor': 'pointer'
             });
             return content;
 
         };
-    var create = function(options) {
+    var create = function (options) {
             opt = $.extend(true, {}, defaults, options);
             var sliderHeight = parseInt(opt.headerSize, 10) + parseInt(opt.contentSize, 10);
             var slider = document.createElement('div');
@@ -53,16 +53,19 @@ define(['jquery'], function($) {
             var content = document.createElement('div');
             var bottomBar = document.createElement('div');
             var visible = true;
+            content.id = "contentBar";
             $(header).addClass('row-fluid');
-            var doHide = function() {
+            var doHide = function () {
                     $(slider).animate({
-                        height: opt.headerSize
+                        height: opt.headerSize,
+                        backgroundColor: "transparent"
                     }, opt.speed);
                     visible = false;
                 };
-            var doShow = function() {
+            var doShow = function () {
                     $(slider).animate({
                         height: sliderHeight,
+                        backgroundColor: opt.backgroundColorBar
                     }, opt.speed);
                     visible = true;
                 };
@@ -72,7 +75,7 @@ define(['jquery'], function($) {
                 bottom: '0',
                 height: sliderHeight,
                 textAlign: 'center',
-                backgroundColor: opt.backgroundColorBar,
+                backgroundColor: "transparent",
                 opacity: opt.opaci,
                 zIndex: 1000
             });
@@ -95,10 +98,10 @@ define(['jquery'], function($) {
 
 
 
-            header.addEventListener('click', function(event) {
+            header.addEventListener('click', function (event) {
                 if(visible) {
 
-                    $(content).fadeOut('fast', function() {
+                    $(content).fadeOut('fast', function () {
                         $(content).empty();
                         if($(event.target).is("#closebar")) {
                             doHide();
@@ -113,7 +116,7 @@ define(['jquery'], function($) {
                     });
                 } else {
                     if($(event.target).hasClass("tooglable")) {
-                        $(content).append(opt.content[event.target.innerHTML]);
+                                                $(content).append(opt.content[event.target.innerHTML]);
                         $(slider).append($(content));
                         $(content).show();
                         opt.content[event.target.innerHTML].show();

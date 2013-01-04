@@ -24,6 +24,10 @@
       position: relative;
       z-index: 9;
       margin-left: 150px;
+      direction: ltr;
+      padding:3px;
+
+
     }
 
     .carousel-control {
@@ -36,8 +40,13 @@
     }
 
     .carousel .item {
-      height: 700px;
+      height: 630px;
+      overflow : -moz-scrollbars-vertical;
+      overflow: -webkit-scrollbars-vertical;
+      overflow: scroll;
+      direction: rtl;
     }
+
 
 }
 
@@ -145,16 +154,13 @@
                 <div class="row-fluid">
                   <div class="span4">
                     <img class="imgPoi" src="images/normandie.jpeg" height="100px" width="100px">
-                      <span class="poiTitle">Normandie</span>
-                     <img src="images/removePoi.jpeg" class="removePoi">
-
-                  </div>
+                    <span class="poiTitle">Normandie</span>
+                    <img src="images/removePoi.jpeg" class="removePoi"></div>
                   <!--/span-->
                   <div class="span4">
                     <img class="imgPoi" src="images/paris.jpeg" height="100px" width="100px">
-                      <span class="poiTitle">Paris</span>
-                    <img src="images/removePoi.jpeg" class="removePoi">
-                  </div>
+                    <span class="poiTitle">Paris</span>
+                    <img src="images/removePoi.jpeg" class="removePoi"></div>
                   <!--/span-->
                   <div class="span4">
                     <img class="imgPoi" src="images/lyon.jpg" height="100px" width="100px">
@@ -193,17 +199,17 @@
             <!--/row-->
 
             <hr>
+           <div class="row-fluid">
+             
+           </div>
 
             <footer>
               <p>&copy; Company 2012</p>
             </footer>
 
           </div>
-
         </div>
-        <div class="carousel-control-description">
-          Prepare your
-          <br>Schedule</div>
+
       </div>
 
       <div id="calendarItem" class="item">
@@ -219,6 +225,10 @@
 
       </div>
     </div>
+
+    <div class="carousel-control-description">
+      Prepare your
+      <br>Schedule</div>
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
     <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
   </div>
@@ -254,8 +264,7 @@
     </div>
     <div class="elBottom">
       <span>
-        <img src="" alt="" class="imgPoiBar">
-      </span>
+        <img src="" alt="" class="imgPoiBar"></span>
       <header>
         <p class="poiTitle"></p>
       </header>
@@ -337,6 +346,7 @@
 <script src="scripts/vendor/bootstrap/bootstrap-scrollspy.js"></script>
 <script src="scripts/vendor/bootstrap/bootstrap-collapse.js"></script>
 <script src="scripts/vendor/bootstrap/bootstrap-tab.js"></script>
+
 <!-- endbuild -->
 
 <!-- build:js scripts/amd-app.js -->

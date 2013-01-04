@@ -11,6 +11,9 @@ require.config({
         },
         tooltip: {
             deps: ['jquery']
+        },
+        addRemovePoi:{
+            deps: ['slider']
         }
     },
 
@@ -21,7 +24,7 @@ require.config({
         fullcalendar: 'vendor/fullcalendar/fullcalendar',
         popover: 'vendor/bootstrap/bootstrap-popover',
         tooltip: 'vendor/bootstrap/bootstrap-tooltip',
-        addRemovePoi: "addRemovePoi"
+        addRemovePoi: "addRemovePoi",
     }
 });
 

@@ -41,12 +41,12 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
             contentSize: '135px',
             content: mycontent,
             headerContent: ['restaurants', 'all', 'deleted'],
-            backgroundColor: 'trasparent',
             opacity: 0.7,
             speed: 'fast'
         };
         slider(slideroptions);
-        addRemove();
+        addRemove(mycontent);
+        
         var triplen, length = '',
             counter = 0,
             options = {
