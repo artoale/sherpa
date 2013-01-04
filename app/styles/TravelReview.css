@@ -28,6 +28,14 @@ article.container.travelreview {
 	margin-top: 0px;
 }
 
+.trip_author {
+	font-size: 22px;
+}
+
+.trip_author:first-letter {
+	font-size: 26px;
+}
+
 .trip_details {
 	margin-left: 20%;
 	padding: 10px;
