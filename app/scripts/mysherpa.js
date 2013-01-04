@@ -13,7 +13,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
     }, {
         capt: 'Toulouse',
         uri: 'images/Toulouse.jpg'
-    },{
+    }, {
         capt: 'Paris',
         uri: 'images/paris.jpeg'
     }, {
@@ -25,15 +25,15 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
     }, {
         capt: 'Milano',
         uri: 'images/thumb/milano.jpeg'
-    },{
+    }, {
         capt: 'Salvador',
         uri: 'images/Brazil_Alice/salvador.jpg'
-    },{
+    }, {
         capt: 'sao-paolo',
         uri: 'images/Brazil_Alice/sao-paolo.jpg'
     }];
 
-       var friendsArray = [{
+    var friendsArray = [{
         capt: 'Baiju',
         uri: 'images/China_Bob/baiju.jpg'
     }, {
@@ -59,7 +59,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         uri: 'images/China_Bob/table.jpg'
     }];
 
-       var allArray = [{
+    var allArray = [{
         capt: 'Milan',
         uri: 'images/Italy_Alice/milan.jpg'
     }, {
@@ -86,6 +86,63 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
     }];
 
 
+    var restaurantsArray = [{
+        capt: 'Restaurant',
+        uri: 'images/restaurants/1.jpg'
+    }, {
+        capt: 'Restaurant',
+        uri: 'images/restaurants/2.jpg'
+    }, {
+        capt: 'Restaurant',
+        uri: 'images/restaurants/3.jpg'
+    }, {
+        capt: 'Restaurant',
+        uri: 'images/restaurants/4.jpg'
+    }, {
+        capt: 'Restaurant',
+        uri: 'images/restaurants/5.jpg'
+    }];
+
+
+    var hotelArray = [{
+        capt: 'Baiju',
+        uri: 'images/China_Bob/baiju.jpg'
+    }, {
+        capt: 'Beijing',
+        uri: 'images/China_Bob/beijing.jpg'
+    }, {
+        capt: 'Brian',
+        uri: 'images/China_Bob/brian.jpg'
+    }, {
+        capt: 'Sheraton',
+        uri: 'images/China_Bob/sheraton.jpg'
+    }, {
+        capt: 'Shinlu',
+        uri: 'images/China_Bob/shinlu.jpg'
+    }, {
+        capt: 'Table',
+        uri: 'images/China_Bob/table.jpg'
+    }];
+
+        var shoppingArray = [{
+        capt: 'Baiju',
+        uri: 'images/China_Bob/baiju.jpg'
+    }, {
+        capt: 'Beijing',
+        uri: 'images/China_Bob/beijing.jpg'
+    }, {
+        capt: 'Brian',
+        uri: 'images/China_Bob/brian.jpg'
+    }, {
+        capt: 'Sheraton',
+        uri: 'images/China_Bob/sheraton.jpg'
+    }, {
+        capt: 'Shinlu',
+        uri: 'images/China_Bob/shinlu.jpg'
+    }, {
+        capt: 'Table',
+        uri: 'images/China_Bob/table.jpg'
+    }];
     $(function () {
 
         var mycontent = {};
@@ -147,12 +204,12 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
 
                     // remove the element from the "Draggable Events" list
                     badge = $(this).find('.badge');
-                    if (badge.size()) {
+                    if(badge.size()) {
                         badge.html(parseInt(badge.html(), 10) + 1);
                     } else {
                         $('<a class="badge badge-info" style="float: right">1</a>').appendTo($(this).find('p'));
                     }
-                    if (copiedEventObject.category === 'poi') {
+                    if(copiedEventObject.category === 'poi') {
                         $(this).appendTo(thumbContainer);
                     } else {
                         $(this).appendTo($('#' + copiedEventObject.category).find('ul'));
@@ -187,7 +244,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         triplen = trip.length || 15;
         length += triplen + ' ';
         length += triplen > 1 ? 'days' : 'day';
-        trip.destination =  trip.destination || 'France';
+        trip.destination = trip.destination || 'France';
         $('#destination').html(trip.destination);
 
         $('#length').html(length);
@@ -253,11 +310,11 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
 
         generateContentCarousel();
 
-        generateContentBar("friends",friendsArray);
-        generateContentBar("all",allArray)
-        generateContentBarTwo('hotel', 'hotel');
-        generateContentBarTwo('restaurant', 'restaurant');
-        generateContentBarTwo('shopping', 'shopping');
+        generateContentBar("friends", friendsArray);
+        generateContentBar("all", allArray)
+        generateContentBarTwo('hotel', 'hotel',hotelArray);
+        generateContentBarTwo('restaurant', 'restaurant', restaurantsArray);
+        generateContentBarTwo('shopping', 'shopping', shoppingArray);
         var sliderOne = slider(slideroptions);
         addRemove(sliderOne.state);
 
@@ -288,7 +345,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
                     var newObj = {
                         uri: $(this).find('img').attr('src'),
                         capt: $(this).find('p').contents().filter(function () {
-                            return (this.nodeType === 3);
+                            return(this.nodeType === 3);
                         }).text()
                     };
                     objData.push(newObj);
@@ -326,7 +383,6 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
             sliderTwo.hideAll();
         });
 
-        
 
 
     });
