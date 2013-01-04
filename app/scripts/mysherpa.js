@@ -96,7 +96,7 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
                     if (copiedEventObject.category === 'poi') {
                         $(this).appendTo(thumbContainer);
                     } else {
-                        $(this).appendTo($('#' + copiedEventObject.category));
+                        $(this).appendTo($('#' + copiedEventObject.category).find('ul'));
                     }
 
 
@@ -130,34 +130,9 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         length += triplen > 1 ? 'days' : 'day';
 
         $('#destination').html(trip.destination);
-        $('#calendar').fullCalendar(options);
+
         $('#length').html(length);
 
-        thumbs.forEach(function (thumb) {
-            var node = $(thumbGenerator(thumb.uri, thumb.capt));
-            var eventObject = {
-                title: thumb.capt,
-                uri: thumb.uri,
-                nodeSrc: node,
-                category: 'poi' //available: poi, restaurant, hotel, shopping
-            };
-
-            // store the Event Object in the DOM element so we can get to it later
-            node.data('eventObject', eventObject);
-            thumbContainer.append(node);
-        });
-
-
-
-        thumbContainer.find('li').draggable({
-            revert: 'invalid',
-            revertDuration: 0,
-            helper: function () {
-                //generate a minithumb for drag&drop
-                var thumb = $(this).data('eventObject');
-                return $(thumbGenerator(thumb.uri, thumb.title, 1));
-            }
-        });
 
 
         var generateContentCarousel = function () {
@@ -241,11 +216,50 @@ define(['trip', 'jquery', 'thumbGenerator', 'popoverContentGenerator', 'slider',
         $('a.right.carousel-control').click(function () {
             sliderOne.hideAll();
             sliderTwo.showAll();
+            $('#calendar').fullCalendar(options);
             setTimeout(function () {
                 $('.fc-button-agendaWeek').click();
             }, 800);
+            var finalData = (function () {
+                var objData = [];
+                $('#suggestion').find('li').each(function () {
+                    var newObj = {
+                        uri: $(this).find('img').attr('src'),
+                        capt: $(this).find('p').contents().filter(function () {
+                            return (this.nodeType === 3);
+                        }).text()
+                    };
+                    objData.push(newObj);
+                });
+                return objData;
+            }());
+            console.log(finalData);
+            finalData.forEach(function (thumb) {
+                var node = $(thumbGenerator(thumb.uri, thumb.capt));
+                var eventObject = {
+                    title: thumb.capt,
+                    uri: thumb.uri,
+                    nodeSrc: node,
+                    category: 'poi' //available: poi, restaurant, hotel, shopping
+                };
+
+                // store the Event Object in the DOM element so we can get to it later
+                node.data('eventObject', eventObject);
+                thumbContainer.append(node);
+            });
+            thumbContainer.find('li').draggable({
+                revert: 'invalid',
+                revertDuration: 0,
+                helper: function () {
+                    //generate a minithumb for drag&drop
+                    var thumb = $(this).data('eventObject');
+                    return $(thumbGenerator(thumb.uri, thumb.title, 1));
+                }
+            });
+
         });
         $('a.left.carousel-control').click(function () {
+            $('#calendar').fullCalendar('destroy');
             sliderOne.showAll();
             sliderTwo.hideAll();
         });
