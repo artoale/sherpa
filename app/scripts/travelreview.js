@@ -29,8 +29,8 @@ define(['mapTest', 'ratingsys', 'infoTravel', 'places_images_generator', 'commen
 	var slideroptions = {
 		column: ['Hotel', 'Restaurant', 'Shopping'],
 		position: 'bottom',
-		headerSize: '50px',
-		contentSize: '135px',
+		headerSize: '40px',
+		contentSize: '200px',
 		content: mycontent,
 		headerContent: ['hotels', 'restaurants', 'shopping'],
 		backgroundColor: 'trasparent',
