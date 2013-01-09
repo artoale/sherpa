@@ -28,18 +28,18 @@ function getData() {
 				uri: 'paris.jpg'
 			}],
 			hotels: [{
-				capt: 'Hilton Hotel, Paris',
+				capt: 'Hilton',
 				uri: 'hilton_paris.jpg'
 			}, {
-				capt: 'Windsor Hotel, Marseille',
+				capt: 'Windsor',
 				uri: 'windsor_marseille.jpg'
 			}],
 			restaurants: [{
-				capt: 'Chez Michelle, Paris',
+				capt: 'Michelle',
 				uri: 'chez_michelle_paris.jpg'
 			}],
 			shopping: [{
-				capt: 'Galeries Lafayette, Paris',
+				capt: 'Lafayette',
 				uri: 'lafayette_paris.jpg'
 			}]
 		}]
@@ -75,14 +75,14 @@ function getData() {
 				uri: 'Abu_Simbel.jpg'
 			}],
 			hotels: [{
-				capt: 'Marriott Hotel, Cairo',
+				capt: 'Marriott',
 				uri: 'marriott.jpg'
 			}, {
-				capt: 'sonesta, Luxor',
+				capt: 'Sonesta',
 				uri: 'sonesta.jpg'
 			}],
 			restaurants: [{
-				capt: 'Flamenco, Cairo',
+				capt: 'Flamenco',
 				uri: 'flamenco.jpg'
 			}]
 		}]
@@ -119,24 +119,24 @@ function getData() {
 				uri: 'nanjing.jpg'
 			}],
 			hotels: [{
-				capt: 'Brian Hotel, Beijing',
+				capt: 'Brian',
 				uri: 'brian.jpg'
 			}, {
-				capt: 'Sheraton Hotel, Shanghai',
+				capt: 'Sheraton',
 				uri: 'sheraton.jpg'
 			}],
 			restaurants: [{
-				capt: 'Mifan, Shanghai',
+				capt: 'Mifan',
 				uri: 'table.jpg'
 			},{
-				capt: 'Baiju, Shanghai',
+				capt: 'Baiju',
 				uri: 'baiju.jpg'
 			}],
 			shopping: [{
-				capt: 'Shinlu Road, Chengdu',
+				capt: 'Shinlu',
 				uri: 'shinlu.jpg'
 			}, {
-				capt: 'Old City, Shanghai',
+				capt: 'Old City',
 				uri: 'old.jpg'
 			}]
 		}]
@@ -169,18 +169,18 @@ function getData() {
 				uri: 'turin.jpg'
 			}],
 			hotels: [{
-				capt: 'Hilton Hotel, Milan',
+				capt: 'Hilton',
 				uri: 'hilton_milan.jpg'
 			}, {
-				capt: 'Windsor Hotel, Turin',
+				capt: 'Windsor',
 				uri: 'windsor_turin.jpg'
 			}],
 			restaurants: [{
-				capt: 'Dal Giangi, Rho',
+				capt: 'Dal Giangi',
 				uri: 'dal_giangi_rho.jpg'
 			}],
 			shopping: [{
-				capt: 'Via Montenapoleone, Milan',
+				capt: 'Monte',
 				uri: 'montenapoleone_milan.jpg'
 			}]
 
@@ -204,14 +204,14 @@ function getData() {
 				uri: 'salvador.jpg'
 			}],
 			hotels: [{
-				capt: 'Rio Della Plata, Rio De Janeiro',
+				capt: 'La Plata',
 				uri: 'rio_de_la_plata_rio.jpg'
 			}, {
-				capt: 'Imagem Hotel, Salvador',
+				capt: 'Imagem',
 				uri: 'imagem_salvador.jpg'
 			}],
 			restaurants: [{
-				capt: 'La Pupuseria, Salvador',
+				capt: 'Pupuseria',
 				uri: 'pupuseria_salvador.jpg'
 			}]
 		}]
